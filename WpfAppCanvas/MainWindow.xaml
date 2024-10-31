@@ -1,0 +1,39 @@
+﻿<Window x:Class="WpfAppCanvas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppCanvas"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <UniformGrid Name="container" Rows="2" Columns="2">
+        <WrapPanel Name="wrap" Orientation="Vertical">
+            <Button Name="btn1" Content="btn1"/>
+            <Button Name="btn2" Content="btn2"/>
+            <Button Name="btn3" Content="btn3"/>
+            <Button Name="btn4" Content="btn4"/>
+            <Button Name="btn5" Content="btn5"/>
+        </WrapPanel>
+        <StackPanel Name="stack">
+            <Button Content="btn"/>
+            <Button Content="btn"/>
+            <Button Content="btn"/>
+            <Button Content="btn"/>
+        </StackPanel>
+        <DockPanel Name="dock">
+            <Button Content="btn"/>
+            <Button Content="btn"/>
+            <Button Content="btn"/>
+            <Button Content="btn"/>
+            
+        </DockPanel>
+        <Canvas Name="canvas">
+            <Button Content="btn" Canvas.Left="10" Canvas.Top="10"/>
+            <Button Content="btn" Canvas.Left="25" Canvas.Top="25"/>
+            <Button Content="btn" Canvas.Left="40" Canvas.Top="40"/>
+        </Canvas>
+    </UniformGrid>
+        
+        
+        
+   </Window>

@@ -1,0 +1,118 @@
+﻿<Window x:Class="HarryPotterGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HarryPotterGame"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl TabStripPlacement="Left">
+            <TabItem Header="STORE">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="1.5*"></RowDefinition>
+                        <RowDefinition Height="5.5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2">
+                        <Label Content="Select Player" HorizontalAlignment="Left" Margin="50,0,0,0" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="cboPlayer" Width="230" Margin="15" SelectionChanged="cboPlayer_SelectionChanged"/>
+                        <Label x:Name="lblAvaible" Content="Avaible Points:" Margin="5" Height="28"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+                        <Button x:Name="btnNew" Content="New" Width="100" HorizontalAlignment="Left" Margin="20" Click="BtnNew_Click"/>
+                        <Button x:Name="btnDelete" Content="Delete" Width="100" HorizontalAlignment="Left" Margin="20" Click="BtnDelete_Click"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0" Margin="10">
+                        <Label Content="Purchased Products"></Label>
+                        <DataGrid x:Name="dvgStore" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding id}" Header="id"/>
+                                <DataGridTextColumn Binding="{Binding name}" Header="Ability"/>
+                                <DataGridTextColumn Binding="{Binding points}" Header="Points"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.RowSpan="3" Grid.Column="1">
+                        <Separator Visibility="Visible"  Grid.Column="1" Grid.RowSpan="3"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Border BorderBrush="Gray">
+                                <StackPanel Orientation="Vertical">
+                                    <Image x:Name="imgWand" Tag="Wand" Source="../images/wand.jpeg"  Margin="10" IsEnabled="True" Height="60" Width="40"/>
+                                    <Label Content="100 pt"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderBrush="Gray">
+                                <StackPanel Orientation="Vertical">
+                                    <Image x:Name="imgThunder" Tag="Thunder" Source="../images/thunder.png"  Margin="10" IsEnabled="True" Height="60" Width="40"/>
+                                    <Label Content="50 pt"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderBrush="Gray">
+                                <StackPanel Orientation="Vertical">
+                                    <Image x:Name="imgBrain" Tag="Brain" Source="../images/brain.jpeg"  Margin="10" IsEnabled="True" Height="60" Width="40"/>
+                                    <Label Content="50 pt"/>
+                                </StackPanel>
+                            </Border>
+
+                        </StackPanel>
+
+                    </StackPanel>
+                    <Button Name="btnSave" Grid.Column="1" Content="Save" HorizontalAlignment="Center" Margin="0,45,0,0" Grid.Row="2" VerticalAlignment="Top" Height="35" Width="81" Click="BtnSave_Click"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="GAME">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Margin="10" ShowGridLines="True" Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

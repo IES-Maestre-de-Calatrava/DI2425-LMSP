@@ -1,0 +1,7 @@
+C:\Users\b15-04m\Desktop\DI\GitHub\DI\movimientosTablero\obj\Debug\movimientosTablero.csproj.AssemblyReference.cache
+C:\Users\b15-04m\Desktop\DI\GitHub\DI\movimientosTablero\obj\Debug\movimientosTablero.csproj.CoreCompileInputs.cache
+C:\Users\b15-04m\Desktop\DI\GitHub\DI\movimientosTablero\bin\Debug\movimientosTablero.exe.config
+C:\Users\b15-04m\Desktop\DI\GitHub\DI\movimientosTablero\bin\Debug\movimientosTablero.exe
+C:\Users\b15-04m\Desktop\DI\GitHub\DI\movimientosTablero\bin\Debug\movimientosTablero.pdb
+C:\Users\b15-04m\Desktop\DI\GitHub\DI\movimientosTablero\obj\Debug\movimientosTablero.exe
+C:\Users\b15-04m\Desktop\DI\GitHub\DI\movimientosTablero\obj\Debug\movimientosTablero.pdb

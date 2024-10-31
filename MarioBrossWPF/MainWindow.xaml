@@ -1,0 +1,57 @@
+﻿<Window x:Class="MarioBrossWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MarioBrossWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl TabStripPlacement="Left">
+            <TabItem Header="START">
+                <Grid Margin="0,58,0,-7">
+                    <Label Name="lblLives" Content="Nº of lives: " HorizontalAlignment="Left" Margin="160,119,0,0" VerticalAlignment="Top" Height="29" Width="76" RenderTransformOrigin="0.634,-0.527"/>
+                    <TextBox Name="tbLives" HorizontalAlignment="Left" Margin="259,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Name="lblPotions" Content="Nº of potions: " HorizontalAlignment="Left" Margin="154,184,0,0" VerticalAlignment="Top" Height="27" Width="95"/>
+                    <TextBox Name="tbPotions" HorizontalAlignment="Left" Margin="260,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Button Name="btnStart" Content="START" HorizontalAlignment="Left" Margin="298,258,0,0" VerticalAlignment="Top" Height="46" Width="126" Click="btnStart_Click"/>
+                    
+                    
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="GAME" Height="20" VerticalAlignment="Top">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid x:Name="dashboardGrid" Margin="10" ShowGridLines="True" Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition  Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

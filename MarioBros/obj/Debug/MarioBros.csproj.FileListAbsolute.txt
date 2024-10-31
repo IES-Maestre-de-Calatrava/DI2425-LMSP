@@ -1,0 +1,2 @@
+C:\Users\b15-04m\Desktop\DI\GitHub\DI\MarioBros\obj\Debug\MarioBros.csproj.AssemblyReference.cache
+C:\Users\b15-04m\Desktop\DI\GitHub\DI\MarioBros\obj\Debug\MarioBros.csproj.CoreCompileInputs.cache

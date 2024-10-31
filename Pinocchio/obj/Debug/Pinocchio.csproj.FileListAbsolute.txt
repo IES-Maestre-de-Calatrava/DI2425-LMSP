@@ -1,0 +1,14 @@
+C:\Users\b15-04m\Desktop\DI\GitHub\DI\Pinocchio\bin\Debug\Pinocchio.exe.config
+C:\Users\b15-04m\Desktop\DI\GitHub\DI\Pinocchio\bin\Debug\Pinocchio.exe
+C:\Users\b15-04m\Desktop\DI\GitHub\DI\Pinocchio\bin\Debug\Pinocchio.pdb
+C:\Users\b15-04m\Desktop\DI\GitHub\DI\Pinocchio\obj\Debug\Pinocchio.csproj.AssemblyReference.cache
+C:\Users\b15-04m\Desktop\DI\GitHub\DI\Pinocchio\obj\Debug\Pinocchio.csproj.CoreCompileInputs.cache
+C:\Users\b15-04m\Desktop\DI\GitHub\DI\Pinocchio\obj\Debug\Pinocchio.exe
+C:\Users\b15-04m\Desktop\DI\GitHub\DI\Pinocchio\obj\Debug\Pinocchio.pdb
+C:\Users\Usuario\Desktop\DAM2\DI\GitHub\DIgit\Pinocchio\bin\Debug\Pinocchio.exe.config
+C:\Users\Usuario\Desktop\DAM2\DI\GitHub\DIgit\Pinocchio\bin\Debug\Pinocchio.exe
+C:\Users\Usuario\Desktop\DAM2\DI\GitHub\DIgit\Pinocchio\bin\Debug\Pinocchio.pdb
+C:\Users\Usuario\Desktop\DAM2\DI\GitHub\DIgit\Pinocchio\obj\Debug\Pinocchio.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\DAM2\DI\GitHub\DIgit\Pinocchio\obj\Debug\Pinocchio.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\DAM2\DI\GitHub\DIgit\Pinocchio\obj\Debug\Pinocchio.exe
+C:\Users\Usuario\Desktop\DAM2\DI\GitHub\DIgit\Pinocchio\obj\Debug\Pinocchio.pdb

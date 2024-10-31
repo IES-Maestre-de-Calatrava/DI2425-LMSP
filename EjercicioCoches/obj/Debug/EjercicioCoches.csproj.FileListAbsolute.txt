@@ -1,0 +1,7 @@
+C:\Users\b15-04m\Desktop\DI\GitHub\EjercicioCoches\obj\Debug\EjercicioCoches.csproj.AssemblyReference.cache
+C:\Users\b15-04m\Desktop\DI\GitHub\EjercicioCoches\obj\Debug\EjercicioCoches.csproj.CoreCompileInputs.cache
+C:\Users\b15-04m\Desktop\DI\GitHub\EjercicioCoches\bin\Debug\EjercicioCoches.exe.config
+C:\Users\b15-04m\Desktop\DI\GitHub\EjercicioCoches\bin\Debug\EjercicioCoches.exe
+C:\Users\b15-04m\Desktop\DI\GitHub\EjercicioCoches\bin\Debug\EjercicioCoches.pdb
+C:\Users\b15-04m\Desktop\DI\GitHub\EjercicioCoches\obj\Debug\EjercicioCoches.exe
+C:\Users\b15-04m\Desktop\DI\GitHub\EjercicioCoches\obj\Debug\EjercicioCoches.pdb
