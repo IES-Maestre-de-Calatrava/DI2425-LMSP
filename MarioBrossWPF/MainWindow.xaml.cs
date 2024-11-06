@@ -30,8 +30,24 @@ namespace MarioBrossWPF
                 Mario player = new Mario(lives, potions);
 
             }
+            else
+            {
+                MessageBox.Show("Deben ser valores enteros.");
+            }
             Dashboard dashboard = new Dashboard(dashboardGrid.RowDefinitions.Count(), dashboardGrid.ColumnDefinitions.Count());
-            dashboard.InitDash(ref dashboardGrid);
+            dashboard.InitDash();
+            for (int i = 0; i < dashboardGrid.RowDefinitions.Count(); i++)
+            {
+                for (int j = 0; j < dashboardGrid.ColumnDefinitions.Count(); j++)
+                {
+                    Label lbl_dash = new Label();
+                    lbl_dash.Content = dashboard.dash[i,j];
+                    dashboardGrid.Children.Add(lbl_dash);
+
+                }
+            }
+         
+
         }
     }
 }

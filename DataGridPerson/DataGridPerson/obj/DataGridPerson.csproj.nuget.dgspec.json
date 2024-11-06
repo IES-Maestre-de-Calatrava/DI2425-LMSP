@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\b15-04m\\Desktop\\DI\\DI2425-LMSP\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\b15-04m\\Desktop\\DI\\DI2425-LMSP\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj",
         "packagesPath": "C:\\Users\\b15-04m\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\b15-04m\\Desktop\\DI\\DI2425-LMSP\\DataGridPerson\\DataGridPerson\\obj\\",
+=======
+    "C:\\Users\\Usuario\\Desktop\\DAM2\\DI\\DI2425-LMSP\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Usuario\\Desktop\\DAM2\\DI\\DI2425-LMSP\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\DAM2\\DI\\DI2425-LMSP\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj",
+        "projectName": "DataGridPerson",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\DAM2\\DI\\DI2425-LMSP\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\DAM2\\DI\\DI2425-LMSP\\DataGridPerson\\DataGridPerson\\obj\\",
+>>>>>>> 22021ebca026274c2bb251deb556e8f7d030f414
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\b15-04m\\AppData\\Roaming\\NuGet\\NuGet.Config",
