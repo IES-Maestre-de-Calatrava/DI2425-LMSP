@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MarioBrossWPF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc7ad7be530a4c0fbbedd8e7843734a719addcea")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d79c1ba2a4759b104435aff9bd53f4a0421283b")]
 [assembly: System.Reflection.AssemblyProductAttribute("MarioBrossWPF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MarioBrossWPF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

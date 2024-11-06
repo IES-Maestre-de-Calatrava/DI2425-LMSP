@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\b15-04m\\Desktop\\DI\\GitHub\\DI\\MarioBrossWPF\\MarioBrossWPF.csproj",
+      "projectUniqueName": "C:\\Users\\b15-04m\\Desktop\\DI\\DI2425-LMSP\\MarioBrossWPF\\MarioBrossWPF.csproj",
       "projectName": "MarioBrossWPF",
-      "projectPath": "C:\\Users\\b15-04m\\Desktop\\DI\\GitHub\\DI\\MarioBrossWPF\\MarioBrossWPF.csproj",
+      "projectPath": "C:\\Users\\b15-04m\\Desktop\\DI\\DI2425-LMSP\\MarioBrossWPF\\MarioBrossWPF.csproj",
       "packagesPath": "C:\\Users\\b15-04m\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\b15-04m\\Desktop\\DI\\GitHub\\DI\\MarioBrossWPF\\obj\\",
+      "outputPath": "C:\\Users\\b15-04m\\Desktop\\DI\\DI2425-LMSP\\MarioBrossWPF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\b15-04m\\AppData\\Roaming\\NuGet\\NuGet.Config",

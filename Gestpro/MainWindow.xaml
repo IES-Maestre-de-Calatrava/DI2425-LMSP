@@ -1,0 +1,67 @@
+﻿<Window x:Class="Gestpro.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gestpro"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <TabControl TabStripPlacement="Left" Margin="0,60,0,0">
+            <TabItem Header="INICIO">
+                <Grid>
+                    <Button Content="PROYECTOS" Margin="10,96,576,240"/>
+                    <Button Content="ESTADÍSTICAS" Margin="162,96,425,240"/>
+                    <Button Content="EMPLEADOS" Margin="10,162,576,173"/>
+                    <Button Content="USUARIOS" Margin="162,162,425,174"/>
+                    <Button Content="G.ECONÓMICA" Margin="10,226,577,110"/>
+                    <Image Source="./Sources/palm_3086199.png"  HorizontalAlignment="Left" Height="134" Margin="382,133,0,0" VerticalAlignment="Top" Width="148" RenderTransformOrigin="-0.263,0.298" Visibility="Visible"/>
+                    <Image Source="./SOurces/logotipo.png" HorizontalAlignment="Left" Height="117" Margin="499,305,0,0" VerticalAlignment="Top" Width="165" Visibility="Visible"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="PROYECTO">
+                <Grid>
+                    <Label Content="Código Proyecto" HorizontalAlignment="Left" Margin="534,68,0,0" VerticalAlignment="Top" Height="33" Width="128" RenderTransformOrigin="0.524,-0.374"/>
+                    <Label Content="Nombre" HorizontalAlignment="Left" Margin="534,126,0,0" VerticalAlignment="Top" Height="33" Width="128" RenderTransformOrigin="0.524,-0.374"/>
+                    <Label Content="Fecha Inicio" HorizontalAlignment="Left" Margin="534,197,0,0" VerticalAlignment="Top" Height="33" Width="128" RenderTransformOrigin="0.524,-0.374"/>
+                    <Label Content="Fecha Fin" HorizontalAlignment="Left" Margin="534,267,0,0" VerticalAlignment="Top" Height="33" Width="128" RenderTransformOrigin="0.524,-0.374"/>
+                    <Button Name="btnAdd" Content="Añadir" HorizontalAlignment="Left" Margin="406,340,0,0" VerticalAlignment="Top" Height="20" Width="85" Click="btnAdd_Click"/>
+                    <Button Name="btnModify" Content="Modificar" HorizontalAlignment="Left" Margin="493,340,0,0" VerticalAlignment="Top" Height="20" Width="85" Click="btnModify_Click"/>
+                    <Button Name="btnDelete" Content="Eliminar" HorizontalAlignment="Left" Margin="579,340,0,0" VerticalAlignment="Top" Height="20" Width="85" Click="btnDelete_Click"/>
+                    <TextBox Name="tbCodProy" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Margin="536,98,48,243" Height="23"/>
+                    <TextBox Name="tbNombre" HorizontalAlignment="Left" Margin="537,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Height="23"/>
+                    <TextBox Name="tbFechaInicio" HorizontalAlignment="Left" Margin="537,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Height="23"/>
+                    <TextBox Name="tbFechaFin" HorizontalAlignment="Left" Margin="537,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Height="23"/>
+                    <Image Source="./Sources/palm_3086199.png" HorizontalAlignment="Left" Height="38" Margin="636,25,0,0" VerticalAlignment="Top" Width="84" Visibility="Visible"/>
+                    <Image Source="./Sources/logotipo.png" HorizontalAlignment="Left" Height="130" Margin="10,311,0,0" VerticalAlignment="Top" Width="157" Visibility="Visible"/>
+                    <TextBox HorizontalAlignment="Left" Margin="45,63,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="328" Height="38"/>
+                    <DataGrid AutoGenerateColumns="false" Margin="63,112,350,100" Name="dataProject" SelectionChanged="dataProject_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Código Proyecto" Binding="{Binding CodProy}" />
+                            <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>
+                            <DataGridTextColumn Header="Fecha Inicio" Binding="{Binding FechaInicio}"/>
+                            <DataGridTextColumn Header="Fecha Fin" Binding="{Binding FechaFin}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="EMPLEADOS">
+
+            </TabItem>
+            <TabItem Header="G.ECONÓMICA">
+
+            </TabItem>
+            <TabItem Header="ESTADISTICAS">
+
+            </TabItem>
+            <TabItem Header="USUARIOS">
+
+            </TabItem>
+        </TabControl>
+        <TextBlock TextWrapping="Wrap" Text="GESTPRO" Width="800" Height="45" Margin="0,10,0,379" TextAlignment="Center"/>
+
+    </Grid>
+</Window>
