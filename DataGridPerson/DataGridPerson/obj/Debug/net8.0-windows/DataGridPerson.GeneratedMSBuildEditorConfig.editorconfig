@@ -8,6 +8,10 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DataGridPerson
+<<<<<<< HEAD
+build_property.ProjectDir = C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\DataGridPerson\DataGridPerson\
+=======
 build_property.ProjectDir = C:\Users\Usuario\Desktop\DAM2\DI\DI2425-LMSP\DataGridPerson\DataGridPerson\
+>>>>>>> 22021ebca026274c2bb251deb556e8f7d030f414
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

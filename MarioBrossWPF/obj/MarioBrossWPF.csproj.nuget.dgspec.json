@@ -1,6 +1,19 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+    "C:\\Users\\b15-04m\\Desktop\\DI\\DI2425-LMSP\\MarioBrossWPF\\MarioBrossWPF.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\b15-04m\\Desktop\\DI\\DI2425-LMSP\\MarioBrossWPF\\MarioBrossWPF.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\b15-04m\\Desktop\\DI\\DI2425-LMSP\\MarioBrossWPF\\MarioBrossWPF.csproj",
+        "projectName": "MarioBrossWPF",
+        "projectPath": "C:\\Users\\b15-04m\\Desktop\\DI\\DI2425-LMSP\\MarioBrossWPF\\MarioBrossWPF.csproj",
+        "packagesPath": "C:\\Users\\b15-04m\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\b15-04m\\Desktop\\DI\\DI2425-LMSP\\MarioBrossWPF\\obj\\",
+=======
     "C:\\Users\\Usuario\\Desktop\\DAM2\\DI\\DI2425-LMSP\\MarioBrossWPF\\MarioBrossWPF.csproj": {}
   },
   "projects": {
@@ -12,6 +25,7 @@
         "projectPath": "C:\\Users\\Usuario\\Desktop\\DAM2\\DI\\DI2425-LMSP\\MarioBrossWPF\\MarioBrossWPF.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Usuario\\Desktop\\DAM2\\DI\\DI2425-LMSP\\MarioBrossWPF\\obj\\",
+>>>>>>> 22021ebca026274c2bb251deb556e8f7d030f414
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
