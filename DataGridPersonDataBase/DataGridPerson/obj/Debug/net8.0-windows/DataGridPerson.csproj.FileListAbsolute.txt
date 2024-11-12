@@ -40,3 +40,11 @@ C:\Users\Usuario\Desktop\DAM2\DI\GitHub\DIgit\DataGridPerson\DataGridPerson\obj\
 C:\Users\Usuario\Desktop\DAM2\DI\GitHub\DIgit\DataGridPerson\DataGridPerson\obj\Debug\net8.0-windows\DataGridPerson.pdb
 C:\Users\Usuario\Desktop\DAM2\DI\GitHub\DIgit\DataGridPerson\DataGridPerson\obj\Debug\net8.0-windows\DataGridPerson.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\DAM2\DI\GitHub\DIgit\DataGridPerson\DataGridPerson\obj\Debug\net8.0-windows\ref\DataGridPerson.dll
+C:\Users\Usuario\Desktop\DAM2\DI\DI2425-LMSP\DataGridPersonDataBase\DataGridPerson\obj\Debug\net8.0-windows\DataGridPerson.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\DAM2\DI\DI2425-LMSP\DataGridPersonDataBase\DataGridPerson\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\Usuario\Desktop\DAM2\DI\DI2425-LMSP\DataGridPersonDataBase\DataGridPerson\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\Usuario\Desktop\DAM2\DI\DI2425-LMSP\DataGridPersonDataBase\DataGridPerson\obj\Debug\net8.0-windows\DataGridPerson_MarkupCompile.cache
+C:\Users\Usuario\Desktop\DAM2\DI\DI2425-LMSP\DataGridPersonDataBase\DataGridPerson\obj\Debug\net8.0-windows\DataGridPerson_MarkupCompile.lref
+C:\Users\Usuario\Desktop\DAM2\DI\DI2425-LMSP\DataGridPersonDataBase\DataGridPerson\obj\Debug\net8.0-windows\DataGridPerson.dll
+C:\Users\Usuario\Desktop\DAM2\DI\DI2425-LMSP\DataGridPersonDataBase\DataGridPerson\obj\Debug\net8.0-windows\refint\DataGridPerson.dll
+C:\Users\Usuario\Desktop\DAM2\DI\DI2425-LMSP\DataGridPersonDataBase\DataGridPerson\obj\Debug\net8.0-windows\DataGridPerson.pdb
