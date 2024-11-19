@@ -56,7 +56,7 @@
                             <DataGridTextColumn Header="Fecha Fin" Binding="{Binding FechaFin}"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button Content="CARGAR DATOS(SIMULAR PROYECTOS)" HorizontalAlignment="Left" Margin="378,25,0,0" VerticalAlignment="Top" Height="43" Width="244"/>
+                    <Button Name="CargarDatos" Content="CARGAR DATOS(SIMULAR PROYECTOS)" HorizontalAlignment="Left" Margin="378,25,0,0" VerticalAlignment="Top" Height="43" Width="244" Click="CargarDatos_Click"/>
 
                 </Grid>
             </TabItem>

@@ -1,4 +1,5 @@
 ﻿using Gestpro.Dominio;
+using Gestpro.persistence.manages;
 using System;
 using System.Text;
 using System.Windows;
@@ -28,25 +29,21 @@ namespace Gestpro
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            if (Int32.TryParse(tbCodProy.Text, out int codAdd)){
+            
                 if (tbNombre.Text.Equals(string.Empty) || tbFechaInicio.Text.Equals(string.Empty) || tbFechaFin.Text.Equals(string.Empty))
                 {
                     MessageBox.Show("Ningun campo puede estar vacio.", "Error");
                 }
                 else
                 {
-                    listProject.Add(new Proyectos(codAdd,tbNombre.Text,tbFechaInicio.Text,tbFechaFin.Text));
+                    listProject.Add(new Proyectos(tbCodProy.Text,tbNombre.Text,tbFechaInicio.Text,tbFechaFin.Text));
                     dataProject.Items.Refresh();
                     tbCodProy.Text = string.Empty;
                     tbNombre.Text = string.Empty;
                     tbFechaInicio.Text = string.Empty;
                     tbFechaFin.Text = string.Empty;
                 }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, ingrese un entero como Código de Proyecto.", "Error");
-            }
+            
         }
 
         private void btnModify_Click(object sender, RoutedEventArgs e)
@@ -54,8 +51,7 @@ namespace Gestpro
             if (dataProject.SelectedItem != null)
             {
                 Proyectos proyecto = (Proyectos)dataProject.SelectedItem;
-                if (Int32.TryParse(tbCodProy.Text, out int codMod))
-                {
+                
                     if (tbNombre.Text.Equals(string.Empty) || tbFechaInicio.Text.Equals(string.Empty)|| tbFechaFin.Text.Equals(string.Empty))
                     {
                         // Mostrar un mensaje de error al usuario
@@ -63,7 +59,7 @@ namespace Gestpro
                     }
                     else
                     {
-                        proyecto.CodProy = codMod;
+                        proyecto.CodProy = tbCodProy.Text;
                         proyecto.Nombre = tbNombre.Text;
                         proyecto.FechaInicio = tbFechaInicio.Text;
                         proyecto.FechaFin = tbFechaFin.Text;
@@ -73,12 +69,8 @@ namespace Gestpro
                         tbFechaInicio.Text = string.Empty;
                         tbFechaFin.Text = string.Empty;
                     }
-                }
-                else
-                {
-                    // Mostrar un mensaje de error al usuario
-                    MessageBox.Show("Por favor, ingrese un entero como Código de Proyecto.", "Error");
-                }
+            
+                
             }
             else
             {
@@ -118,6 +110,22 @@ namespace Gestpro
                 tbFechaInicio.Text = string.Empty;
                 tbFechaFin.Text = string.Empty;
             }
+        }
+
+        private void CargarDatos_Click(object sender, RoutedEventArgs e)
+        {
+            ProjectManage pm = new ProjectManage();
+            List<Proyectos> list = new List<Proyectos>();
+            for (int i = 0; i < 20; i++)
+            {
+                String Name = "Allegro";
+                String Cod = "MTR" + (i + 1) + Name + DateTime.Now.Year.ToString();
+
+                Proyectos p = new Proyectos(Cod, Name, DateTime.Now.ToString(),DateTime.Now.ToString());
+                list.Add(p);
+                pm.insertProject(p);
+            }
+
         }
     }
 }
