@@ -26,8 +26,8 @@
                     <Button Content="EMPLEADOS" Margin="10,162,576,173"/>
                     <Button Content="USUARIOS" Margin="162,162,425,174"/>
                     <Button Content="G.ECONÓMICA" Margin="10,226,577,110"/>
-                    <Image Source="/Sources/palm_3086199.png"  HorizontalAlignment="Left" Height="134" Margin="382,133,0,0" VerticalAlignment="Top" Width="148" RenderTransformOrigin="-0.263,0.298" Visibility="Visible"/>
-                    <Image Source="/Sources/logotipo.png" HorizontalAlignment="Left" Height="117" Margin="499,305,0,0" VerticalAlignment="Top" Width="165" Visibility="Visible"/>
+                    <Image Source="../Sources/palm_3086199.png"  HorizontalAlignment="Left" Height="134" Margin="382,133,0,0" VerticalAlignment="Top" Width="148" RenderTransformOrigin="-0.263,0.298" Visibility="Visible"/>
+                    <Image Source="../Sources/logotipo.png" HorizontalAlignment="Left" Height="117" Margin="499,305,0,0" VerticalAlignment="Top" Width="165" Visibility="Visible"/>
 
                 </Grid>
             </TabItem>
