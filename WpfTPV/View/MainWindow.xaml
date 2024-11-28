@@ -1,0 +1,121 @@
+﻿<Window x:Class="WpfTPV.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTPV"
+        mc:Ignorable="d"
+        Title="TPV" WindowState="Maximized">
+    <Grid Name="container" Background="Coral" ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Name="tbcProducts" BorderThickness="0" Grid.Row="0" Grid.Column="0" FontSize="12"  TabStripPlacement="Top" Background="Coral" FontFamily="Cascadia Code">
+            <TabItem Header="Desayuno" IsSelected="True">
+                  
+                <UniformGrid x:Name="uGridBreakfast">
+                    <Button Name="btnToast" Margin="5" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/sources/toast.png" Width="50" Height="50" Margin="10"/>
+                            <TextBlock Text="Tostada" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="btnCroissant" Margin="5" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/sources/croissant.png" Width="50" Height="50" Margin="10"/>
+                            <TextBlock Text="Croissant" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="btnPorra" Margin="5" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/sources/porra.png" Width="50" Height="50" Margin="10"/>
+                            <TextBlock Text="Porra" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="btnChurro" Margin="5" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/sources/churro.png" Width="50" Height="50" Margin="10"/>
+                            <TextBlock Text="Churro" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </UniformGrid>
+                
+            </TabItem>
+            <TabItem Header="Refresco">
+                <UniformGrid Name="uGridDrink">
+                    <Button Name="btnCocaCola" Margin="5" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/sources/cola.png" Width="25" Height="25" Margin="10"/>
+                            <TextBlock Text="CocaCola" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="btnCocacolaZero" Margin="5" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/sources/colaZero.png" Width="25" Height="25" Margin="10"/>
+                            <TextBlock Text="CocaCola Zero" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="btnFantaLemon" Margin="5" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/sources/fantaLemon.png" Width="25" Height="25" Margin="10"/>
+                            <TextBlock Text="Fanta Limón" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="btnFantaOrange" Margin="5" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/sources/fantaOrange.png" Width="25" Height="25" Margin="10"/>
+                            <TextBlock Text="Fanta Naranja" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="btnFuzeTea" Margin="5" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/sources/fuzeTea.png" Width="25" Height="25" Margin="10"/>
+                            <TextBlock Text="FuzeTea" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                
+                </UniformGrid>
+            </TabItem>
+            <TabItem Header="Café">
+                <UniformGrid x:Name="uGridCoffe">
+                    <Button Name="btnCoffe" Margin="5" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/sources/coffe.jpg" Width="50" Height="50" Margin="10"/>
+                            <TextBlock Text="Café Solo" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="btnCoffeMilk" Margin="5" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/sources/coffeMilk.jpg" Width="50" Height="50" Margin="10"/>
+                            <TextBlock Text="Café leche" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="btnCortadoCoffe" Margin="5" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/sources/coffeCort.jpg" Width="50" Height="50" Margin="10"/>
+                            <TextBlock Text="Café cortado" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="btnColaCao" Margin="5" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/sources/colaCao.jpg" Width="50" Height="50" Margin="10"/>
+                            <TextBlock Text="ColaCao" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="btnChoco" Margin="5" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/sources/choco.jpg" Width="50" Height="50" Margin="10"/>
+                            <TextBlock Text="Chocolate" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </UniformGrid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

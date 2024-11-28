@@ -9,8 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="sources\choco.jpg" />
     <None Remove="sources\churro.png" />
+    <None Remove="sources\coffe.jpg" />
+    <None Remove="sources\coffeCort.jpg" />
+    <None Remove="sources\coffeMilk.jpg" />
     <None Remove="sources\cola.png" />
+    <None Remove="sources\colaCao.jpg" />
     <None Remove="sources\colaZero.png" />
     <None Remove="sources\croissant.png" />
     <None Remove="sources\fantaLemon.png" />
@@ -18,12 +23,16 @@
     <None Remove="sources\fuzeTea.png" />
     <None Remove="sources\porra.png" />
     <None Remove="sources\toast.png" />
-    <None Remove="toast.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="sources\choco.jpg" />
     <Resource Include="sources\churro.png" />
+    <Resource Include="sources\coffe.jpg" />
+    <Resource Include="sources\coffeCort.jpg" />
+    <Resource Include="sources\coffeMilk.jpg" />
     <Resource Include="sources\cola.png" />
+    <Resource Include="sources\colaCao.jpg" />
     <Resource Include="sources\colaZero.png" />
     <Resource Include="sources\croissant.png" />
     <Resource Include="sources\fantaLemon.png" />
@@ -31,7 +40,11 @@
     <Resource Include="sources\fuzeTea.png" />
     <Resource Include="sources\porra.png" />
     <Resource Include="sources\toast.png" />
-    <Resource Include="toast.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Domain\" />
+    <Folder Include="Persistence\" />
   </ItemGroup>
 
 </Project>
