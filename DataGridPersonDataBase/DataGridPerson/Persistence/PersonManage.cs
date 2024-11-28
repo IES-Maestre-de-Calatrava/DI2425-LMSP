@@ -11,11 +11,24 @@ namespace DataGridPerson.Persistance
 {
     class PersonManage
     {
-        private List<Person> listPerson {  get; set; }
+        public List<Person> listPerson {  get; set; }
+        int lastId;
 
         public PersonManage()
         {
             listPerson = new List<Person>();
+        }
+        public int getLastId(Person inputPerson)
+        {
+            List<Object> listAux;
+            listAux = DBBroker.ObtenerAgente().Leer("SELECT MAX(idpeople) FROM people;");
+
+            foreach (List<Object> auxProject in listAux)
+            {
+                lastId = Convert.ToInt32(auxProject[0]) + 1;
+            }
+
+            return lastId;
         }
         public void ReadPerson()
         {
@@ -24,11 +37,7 @@ namespace DataGridPerson.Persistance
             lperson = DBBroker.ObtenerAgente().Leer("select * from people order by idpeople");
             foreach (List<Object> aux in lperson)
             {
-                p = new Person(Int32.Parse(aux[0].ToString()));
-                p.Name = aux[1].ToString();
-                p.SurName = aux[2].ToString();
-                p.Age = Int32.Parse(aux[3].ToString());
-                
+                p = new Person(Int32.Parse(aux[0].ToString()), aux[1].ToString(), aux[2].ToString(), Int32.Parse(aux[3].ToString()));//
                 this.listPerson.Add(p); 
             }
         }

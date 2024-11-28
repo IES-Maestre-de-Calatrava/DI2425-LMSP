@@ -20,9 +20,11 @@ namespace DataGridPerson
     public partial class MainWindow : Window
     {
         private List<Person> listPerson;
+        private PersonManage pm;
         public MainWindow()
         {
             InitializeComponent();
+            pm = new PersonManage();
             listPerson = new List<Person>();
             dataPerson.ItemsSource = listPerson;
         }
@@ -117,6 +119,26 @@ namespace DataGridPerson
                 surnameText.Text = string.Empty;
                 ageText.Text = string.Empty;
             }
+        }
+
+        private void btnInserta_Click(object sender, RoutedEventArgs e)
+        {
+            List<Person> lista = new List<Person>();
+            try
+            {
+                pm.ReadPerson();
+                lista = pm.listPerson;
+                foreach (Person p in lista)
+                {
+                    listPerson.Add(p);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al leer los datos de la base de datos: " + ex.Message, "Error");
+
+            }
+
         }
     }
 }

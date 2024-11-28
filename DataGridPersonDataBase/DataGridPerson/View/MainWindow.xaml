@@ -23,5 +23,6 @@
         <Button Name="btnAdd" Content="Add Person" HorizontalAlignment="Left" Margin="56,309,0,0" VerticalAlignment="Top" Height="40" Width="146" Click="addPerson_Click"/>
         <Button Name="btnModify" Content="Modify" HorizontalAlignment="Left" Margin="202,309,0,0" VerticalAlignment="Top" Height="40" Width="146" Click="modify_Click"/>
         <Button Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="348,309,0,0" VerticalAlignment="Top" Height="40" Width="146" Click="delete_Click"/>
+        <Button Name="btnInserta" Content="Inserta de Base de Datos" HorizontalAlignment="Left" Margin="528,319,0,0" VerticalAlignment="Top" Click="btnInserta_Click"/>
     </Grid>
 </Window>
