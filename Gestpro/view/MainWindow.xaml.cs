@@ -48,6 +48,7 @@ namespace Gestpro
 
         private void btnModify_Click(object sender, RoutedEventArgs e)
         {
+            ProjectManage pm = new ProjectManage();
             if (dataProject.SelectedItem != null)
             {
                 Proyectos proyecto = (Proyectos)dataProject.SelectedItem;
@@ -59,11 +60,14 @@ namespace Gestpro
                     }
                     else
                     {
+                        string auxCod = proyecto.CodProy;
                         proyecto.CodProy = tbCodProy.Text;
                         proyecto.Nombre = tbNombre.Text;
                         proyecto.FechaInicio = tbFechaInicio.Text;
                         proyecto.FechaFin = tbFechaFin.Text;
                         dataProject.Items.Refresh();
+                        pm.modifyProject(proyecto, auxCod);
+
                         tbCodProy.Text = string.Empty;
                         tbNombre.Text = string.Empty;
                         tbFechaInicio.Text = string.Empty;
@@ -80,9 +84,12 @@ namespace Gestpro
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
+            ProjectManage pm = new ProjectManage();
             if (dataProject.SelectedItem != null)
-            {
+            {   
+                string auxCod = tbCodProy.Text;
                 Proyectos proyecto = (Proyectos)dataProject.SelectedItem;
+                pm.deleteProject(proyecto, auxCod);
                 listProject.Remove(proyecto);
                 dataProject.Items.Refresh();
             }
@@ -115,14 +122,14 @@ namespace Gestpro
         private void CargarDatos_Click(object sender, RoutedEventArgs e)
         {
             ProjectManage pm = new ProjectManage();
-            List<Proyectos> list = new List<Proyectos>();
             for (int i = 0; i < 20; i++)
             {
                 String Name = "Allegro";
                 String Cod = "MTR" + (i + 1) + Name + DateTime.Now.Year.ToString();
 
                 Proyectos p = new Proyectos(Cod, Name, DateTime.Now.ToString(),DateTime.Now.ToString());
-                list.Add(p);
+                listProject.Add(p);
+                dataProject.Items.Refresh();
                 pm.insertProject(p);
             }
 

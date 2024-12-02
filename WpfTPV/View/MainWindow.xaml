@@ -116,6 +116,48 @@
                 </UniformGrid>
             </TabItem>
         </TabControl>
-
+        <UniformGrid Grid.Row="1" Grid.Column="0" >
+            <Button x:Name="btn1" Content="1"/>
+            <Button x:Name="btn2" Content="2"/>
+            <Button x:Name="btn3" Content="3"/>
+            <Button x:Name="btnC" Content="C"/>
+            <Button x:Name="btn4" Content="4"/>
+            <Button x:Name="btn5" Content="5"/>
+            <Button x:Name="btn6" Content="6"/>
+            <Button x:Name="btnX" Content="x"/>
+            <Button x:Name="btn7" Content="7"/>
+            <Button x:Name="btn8" Content="8"/>
+            <Button x:Name="btn9" Content="9"/>
+            <Button x:Name="btnD" Content="/"/>
+            <Button x:Name="btn0" Content="0"/>
+            <Button x:Name="btnP" Content="+"/>
+            <Button x:Name="btnM" Content="-"/>
+            <Button x:Name="btnE" Content="="/>
+            
+        </UniformGrid>
+        <Grid x:Name="main" Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <DataGrid x:Name="dtgTicket" Grid.Row="0" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" Background="White" BorderThickness="0" FontSize="12" FontFamily="Cascadia Code">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Producto" Binding="{Binding Product}"/>
+                    <DataGridTextColumn Header="Precio" Binding="{Binding Price}"/>
+                    <DataGridTextColumn Header="Cantidad" Binding="{Binding Quantity}"/>
+                    <DataGridTextColumn Header="Total" Binding="{Binding Total}"/>
+                </DataGrid.Columns>
+             </DataGrid>
+            <Grid x:Name="buttons_grid" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnDelete" Grid.Column="0" Content="Borrar" FontSize="12" FontFamily="Cascadia Code"/>
+                <Button x:Name="btnPay" Grid.Column="1" Content="Pagar" FontSize="12" FontFamily="Cascadia Code"/>
+            </Grid>
+        </Grid>
+        
     </Grid>
 </Window>

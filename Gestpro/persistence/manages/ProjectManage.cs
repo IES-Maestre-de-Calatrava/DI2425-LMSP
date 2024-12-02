@@ -36,11 +36,24 @@ namespace Gestpro.persistence.manages
                 this.listProject.Add(p);
             }
         }
+        
         public void insertProject(Proyectos p)
         {
             DBBroker dBBroker = DBBroker.obtenerAgente();
-            dBBroker.modificar("Insert into proyecto (CODIGOPROY,NOMBREPROY) values (" + p.CodProy + ",'" + p.Nombre + "')");
+            dBBroker.modificar("Insert into proyecto (CODIGOPROY,NOMBREPROY) values ('" + p.CodProy + "','" + p.Nombre + "')");
             
+        }
+        public void modifyProject(Proyectos p, string aux)
+        {
+            DBBroker dBBroker = DBBroker.obtenerAgente();
+            string sql = "Update proyecto set CODIGOPROY='" + p.CodProy + "',NOMBREPROY='" + p.Nombre + "' where CODIGOPROY='" + aux+"'";
+            dBBroker.modificar(sql);
+        }
+        
+        public void deleteProject(Proyectos p, string aux)
+        {
+            DBBroker dBBroker = DBBroker.obtenerAgente();
+            dBBroker.modificar("Delete from proyecto where CODIGOPROY="+ aux +"" );
         }
 
     }
