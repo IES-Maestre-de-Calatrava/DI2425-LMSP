@@ -33,6 +33,7 @@
             </TabItem>
             <TabItem Header="PROYECTO" IsSelected="True">
                 <Grid>
+                    
                     <Label Content="Código Proyecto" HorizontalAlignment="Left" Margin="534,68,0,0" VerticalAlignment="Top" Height="33" Width="128" RenderTransformOrigin="0.524,-0.374"/>
                     <Label Content="Nombre" HorizontalAlignment="Left" Margin="534,126,0,0" VerticalAlignment="Top" Height="33" Width="128" RenderTransformOrigin="0.524,-0.374"/>
                     <Label Content="Fecha Inicio" HorizontalAlignment="Left" Margin="534,197,0,0" VerticalAlignment="Top" Height="33" Width="128" RenderTransformOrigin="0.524,-0.374"/>

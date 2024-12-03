@@ -50,10 +50,10 @@ namespace Gestpro.persistence.manages
             dBBroker.modificar(sql);
         }
         
-        public void deleteProject(Proyectos p, string aux)
+        public void deleteProject(Proyectos p)
         {
             DBBroker dBBroker = DBBroker.obtenerAgente();
-            dBBroker.modificar("Delete from proyecto where CODIGOPROY="+ aux +"" );
+            dBBroker.modificar("Delete from proyecto where CODIGOPROY='"+ p.CodProy +"'" );
         }
 
     }

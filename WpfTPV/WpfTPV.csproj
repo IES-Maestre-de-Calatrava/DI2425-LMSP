@@ -21,8 +21,10 @@
     <None Remove="sources\fantaLemon.png" />
     <None Remove="sources\fantaOrange.png" />
     <None Remove="sources\fuzeTea.png" />
+    <None Remove="sources\logo.png" />
     <None Remove="sources\porra.png" />
     <None Remove="sources\toast.png" />
+    <None Remove="View\logo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,13 +40,14 @@
     <Resource Include="sources\fantaLemon.png" />
     <Resource Include="sources\fantaOrange.png" />
     <Resource Include="sources\fuzeTea.png" />
+    <Resource Include="sources\logo.png" />
     <Resource Include="sources\porra.png" />
     <Resource Include="sources\toast.png" />
+    <Resource Include="View\logo.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\" />
-    <Folder Include="Persistence\" />
+    <PackageReference Include="MySql.Data" Version="9.1.0" />
   </ItemGroup>
 
 </Project>

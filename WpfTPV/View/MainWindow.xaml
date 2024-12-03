@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfTPV"
         mc:Ignorable="d"
         Title="TPV" WindowState="Maximized">
-    <Grid Name="container" Background="Coral" ShowGridLines="True">
+    <Grid Name="container" Background="Coral" >
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
@@ -19,25 +19,25 @@
             <TabItem Header="Desayuno" IsSelected="True">
                   
                 <UniformGrid x:Name="uGridBreakfast">
-                    <Button Name="btnToast" Margin="5" Background="White">
+                    <Button Name="btnToast" Margin="5" Background="White" Click="btnToast_Click">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/sources/toast.png" Width="50" Height="50" Margin="10"/>
                             <TextBlock Text="Tostada" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
-                    <Button Name="btnCroissant" Margin="5" Background="White">
+                    <Button Name="btnCroissant" Margin="5" Background="White" Click="btnCroissant_Click">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/sources/croissant.png" Width="50" Height="50" Margin="10"/>
                             <TextBlock Text="Croissant" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
-                    <Button Name="btnPorra" Margin="5" Background="White">
+                    <Button Name="btnPorra" Margin="5" Background="White" Click="btnPorra_Click">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/sources/porra.png" Width="50" Height="50" Margin="10"/>
                             <TextBlock Text="Porra" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
-                    <Button Name="btnChurro" Margin="5" Background="White">
+                    <Button Name="btnChurro" Margin="5" Background="White" Click="btnChurro_Click">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/sources/churro.png" Width="50" Height="50" Margin="10"/>
                             <TextBlock Text="Churro" VerticalAlignment="Center"/>
@@ -116,7 +116,8 @@
                 </UniformGrid>
             </TabItem>
         </TabControl>
-        <UniformGrid Grid.Row="1" Grid.Column="0" >
+        <UniformGrid Grid.Row="1" Grid.Column="0">
+            
             <Button x:Name="btn1" Content="1"/>
             <Button x:Name="btn2" Content="2"/>
             <Button x:Name="btn3" Content="3"/>
@@ -150,14 +151,27 @@
                 </DataGrid.Columns>
              </DataGrid>
             <Grid x:Name="buttons_grid" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    
                 </Grid.ColumnDefinitions>
-                <Button x:Name="btnDelete" Grid.Column="0" Content="Borrar" FontSize="12" FontFamily="Cascadia Code"/>
-                <Button x:Name="btnPay" Grid.Column="1" Content="Pagar" FontSize="12" FontFamily="Cascadia Code"/>
+                <Button x:Name="btnAdd" Grid.Column="0" Grid.Row="1" Content="Añadir" FontSize="12" FontFamily="Cascadia Code" Click="btnAdd_Click"/>
+                <Button x:Name="btnDelete" Grid.Column="1" Grid.Row="1" Content="Borrar" FontSize="12" FontFamily="Cascadia Code"/>
+                <Button x:Name="btnPay" Grid.Column="2" Grid.Row="1" Content="Pagar" FontSize="12" FontFamily="Cascadia Code"/>
             </Grid>
         </Grid>
-        
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Image Source="/View/logo.png" Width="100" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Calendar HorizontalAlignment="Right"/>
+
+        </Grid>
+
     </Grid>
 </Window>

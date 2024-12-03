@@ -65,6 +65,7 @@ namespace Gestpro
                         proyecto.Nombre = tbNombre.Text;
                         proyecto.FechaInicio = tbFechaInicio.Text;
                         proyecto.FechaFin = tbFechaFin.Text;
+             
                         dataProject.Items.Refresh();
                         pm.modifyProject(proyecto, auxCod);
 
@@ -87,9 +88,9 @@ namespace Gestpro
             ProjectManage pm = new ProjectManage();
             if (dataProject.SelectedItem != null)
             {   
-                string auxCod = tbCodProy.Text;
+                
                 Proyectos proyecto = (Proyectos)dataProject.SelectedItem;
-                pm.deleteProject(proyecto, auxCod);
+                pm.deleteProject(proyecto);
                 listProject.Remove(proyecto);
                 dataProject.Items.Refresh();
             }
@@ -105,7 +106,7 @@ namespace Gestpro
             if (dataProject.SelectedItem != null)
             {
                 Proyectos proyecto = (Proyectos)dataProject.SelectedItem;
-                tbCodProy.Text = Convert.ToString(proyecto.CodProy);
+                tbCodProy.Text = proyecto.CodProy;
                 tbNombre.Text = proyecto.Nombre;
                 tbFechaInicio.Text = proyecto.FechaInicio;
                 tbFechaFin.Text = proyecto.FechaFin;
