@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="sources\choco.jpg" />
+    <None Remove="sources\churreria.jpg" />
     <None Remove="sources\churro.png" />
     <None Remove="sources\coffe.jpg" />
     <None Remove="sources\coffeCort.jpg" />
@@ -29,6 +30,7 @@
 
   <ItemGroup>
     <Resource Include="sources\choco.jpg" />
+    <Resource Include="sources\churreria.jpg" />
     <Resource Include="sources\churro.png" />
     <Resource Include="sources\coffe.jpg" />
     <Resource Include="sources\coffeCort.jpg" />
