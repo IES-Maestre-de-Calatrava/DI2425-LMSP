@@ -118,15 +118,24 @@
         </TabControl>
         <Grid Grid.Row="1" Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="4*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
-            <UniformGrid x:Name="ugridCalcu" Grid.Column="0" Grid.Row="0">
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBox x:Name="txtResult" Grid.Row="0"  Text="0.0" FontSize="20" FontFamily="Cascadia Code" TextAlignment="Right"/>
+                <Button x:Name="btnE" Grid.Row="1" Content="=" Background="LightGreen" />
+         
+            </Grid>
+            <UniformGrid x:Name="ugridCalcu" Grid.Column="0" Grid.Row="1">
 
                 <Button x:Name="btn1" Content="1"/>
                 <Button x:Name="btn2" Content="2"/>
                 <Button x:Name="btn3" Content="3"/>
-                <Button x:Name="btnC" Content="C"/>
+                <Button x:Name="btnC" Content="C" Background="LightSalmon"/>
                 <Button x:Name="btn4" Content="4"/>
                 <Button x:Name="btn5" Content="5"/>
                 <Button x:Name="btn6" Content="6"/>
@@ -139,15 +148,8 @@
                 <Button x:Name="btnP" Content="+"/>
                 <Button x:Name="btnM" Content="-"/>
                 <Button x:Name="btnDot" Content="."/>
-                
-
             </UniformGrid>
-            <Grid Grid.Row="1">
-                <StackPanel>
-                    <Button x:Name="btnE" Content="="/>
-                    <TextBox x:Name="txtResult" Text="0.0" FontSize="20" FontFamily="Cascadia Code" TextAlignment="Right"/>
-                </StackPanel>
-            </Grid>
+            
             
         </Grid>
         <Grid x:Name="main" Grid.Row="0" Grid.Column="1">
@@ -195,13 +197,54 @@
                         <TextBox x:Name="txtNameProduct" Width="100"/>
                         <TextBlock Text="Precio:"/>
                         <TextBox x:Name="txtPrice" Width="100"/>
-                        
+                        <TextBlock Text="Categoría:"/>
+                        <ComboBox>
+                            <ComboBoxItem Content="Desayuno"/>
+                            <ComboBoxItem Content="Refresco"/>
+                            <ComboBoxItem Content="Café"/>
+                        </ComboBox>
+                        <TextBlock Text="Imagen:"/>
+                        <Image x:Name="imgProduct" Width="100" Height="100"/>
+                        <Button x:Name="btnImage" Content="Seleccionar imagen"/>
+                        <Button x:Name="btnAdd" Content="Añadir" Background="LightGreen"/>
+
                     </StackPanel>
                 </TabItem>
                 <TabItem Header="Modificar">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Categoría:"/>
+                        <ComboBox>
+                            <ComboBoxItem Content="Desayuno"/>
+                            <ComboBoxItem Content="Refresco"/>
+                            <ComboBoxItem Content="Café"/>
+                        </ComboBox>
+                        <TextBlock Text="Nombre actual de producto:"/>
+                        <TextBox x:Name="txtActNameProduct" Width="100"/>
+                        <TextBlock Text="Nuevo nombre de producto:"/>
+                        <TextBox x:Name="txtNewNameProduct" Width="100"/>
+                        <TextBlock Text="Nuevo precio:"/>
+                        <TextBox x:Name="txtNewPrice" Width="100"/>
+                        
+                        <TextBlock Text="Nueva Imagen:"/>
+                        <Image x:Name="newimgProduct" Width="100" Height="100"/>
+                        <Button x:Name="btncambiarImage" Content="Seleccionar nueva imagen"/>
+                        <Button x:Name="btnModifyProduct" Content="Modificar" Background="LightGreen"/>
+
+                    </StackPanel>
                 </TabItem>
                 <TabItem Header="Eliminar">
-                    
+                    <StackPanel>
+                        <TextBlock Text="Categoría:"/>
+                        <ComboBox>
+                            <ComboBoxItem Content="Desayuno"/>
+                            <ComboBoxItem Content="Refresco"/>
+                            <ComboBoxItem Content="Café"/>
+                        </ComboBox>
+                        <TextBlock Text="Nombre de producto:"/>
+                        <TextBox x:Name="txtDelNameProduct" Width="100"/>
+                        <TextBlock Text=""/>
+                        <Button x:Name="btnDeleteProduct" Content="Eliminar" Background="LightSalmon"/>
+                    </StackPanel>
                 </TabItem>
             </TabControl>
 
