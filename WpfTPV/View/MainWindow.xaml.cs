@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using System.Diagnostics.Eventing.Reader;
+using System.Globalization;
+using System.IO;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -8,7 +11,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
+using Microsoft.Win32;
+using MySql.Data.MySqlClient;
 using WpfTPV.Domain;
+using WpfTPV.Persistence.Manage;
+using static System.Net.Mime.MediaTypeNames;
+using Image = System.Windows.Controls.Image;
 
 namespace WpfTPV
 {
@@ -19,36 +28,464 @@ namespace WpfTPV
     {
         private Producto productoSeleccionado;
         private List<Producto> listTicket;
+        private ProductManager pm;
+        private string imageBase64 = string.Empty;
         public MainWindow()
         {
             InitializeComponent();
+            pm = new ProductManager();
+            pm.ReadProduct();
+            CrearBotonesDinamicos();
             listTicket = new List<Producto>();
+            dtgTicket.ItemsSource = listTicket;
+            
+            
         }
-        #region Product buttons
-        private void btnToast_Click(object sender, RoutedEventArgs e)
+        #region Calculator
+        private void btnC_Click(object sender, RoutedEventArgs e)
         {
-            productoSeleccionado = new Producto(Producto.TOAST, "Tostada", 1.5, 1);
+            txtResult.Text = "";
         }
-        private void btnCroissant_Click(object sender, RoutedEventArgs e)
+        private void btnX_Click(object sender, RoutedEventArgs e)
         {
-            productoSeleccionado = new Producto(Producto.TOAST, "Croissant", 1.5, 1);
+            txtResult.Text += "*";
         }
-        private void btnChurro_Click(object sender, RoutedEventArgs e)
+        private void btnD_Click(object sender, RoutedEventArgs e)
         {
-            productoSeleccionado = new Producto(Producto.TOAST, "Churro", 1.5, 1);
+            txtResult.Text += "/";
+        }
+        private void btnP_Click(object sender, RoutedEventArgs e)
+        {
+            txtResult.Text += "+";
+        }
+        private void btnM_Click(object sender, RoutedEventArgs e)
+        {
+            txtResult.Text += "-";
+        }
+        private void btnDot_Click(object sender, RoutedEventArgs e)
+        {
+            txtResult.Text += ".";
         }
 
-        private void btnPorra_Click(object sender, RoutedEventArgs e)
+        private void btn1_Click(object sender, RoutedEventArgs e)
         {
-            productoSeleccionado = new Producto(Producto.TOAST, "Porra", 1.5, 1);
+            txtResult.Text += "1";
         }
-
+        private void btn2_Click(object sender, RoutedEventArgs e)
+        {
+            txtResult.Text += "2";
+        }
+        private void btn3_Click(object sender, RoutedEventArgs e)
+        {
+            txtResult.Text += "3";
+        }
+        private void btn4_Click(object sender, RoutedEventArgs e)
+        {
+            txtResult.Text += "4";
+        }
+        private void btn5_Click(object sender, RoutedEventArgs e)
+        {
+            txtResult.Text += "5";
+        }
+        private void btn6_Click(object sender, RoutedEventArgs e)
+        {
+            txtResult.Text += "6";
+        }
+        private void btn7_Click(object sender, RoutedEventArgs e)
+        {
+            txtResult.Text += "7";
+        }
+        private void btn8_Click(object sender, RoutedEventArgs e)
+        {
+            txtResult.Text += "8";
+        }
+        private void btn9_Click(object sender, RoutedEventArgs e)
+        {
+            txtResult.Text += "9";
+        }
+        private void btn0_Click(object sender, RoutedEventArgs e)
+        {
+            txtResult.Text += "0";
+        }
         #endregion
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        #region Product buttons
+        private void logic_btnProduct(String name, double price)
         {
-            listTicket.Add(productoSeleccionado);
+            if (txtResult.Text == "" || txtResult.Text == "0.0")
+            {
+                foreach(Producto p in listTicket)
+                {
+                    if (p.Nombre == name)
+                    {
+                        p.Unidades++;
+                        p.Total = p.Precio * p.Unidades;
+                        dtgTicket.Items.Refresh();
+                        UpdateTotal();
+                        return;
+                    }
+                }
+                
+                productoSeleccionado = new Producto(name, price, 1);
+                listTicket.Add(productoSeleccionado);
+                dtgTicket.Items.Refresh();
+
+            }
+            else if (txtResult.Text.Contains("*"))
+            {
+                string[] result = txtResult.Text.Split('*');
+                foreach (Producto p in listTicket)
+                {
+                    if (p.Nombre == name)
+                    {
+                        p.Unidades+= Convert.ToInt32(result[0]);
+                        p.Total = p.Precio * p.Unidades;
+                        dtgTicket.Items.Refresh();
+                        UpdateTotal();
+                        return;
+                    }
+                }
+                productoSeleccionado = new Producto(name, price, Convert.ToInt32(result[0]));
+                listTicket.Add(productoSeleccionado);
+                dtgTicket.Items.Refresh();
+            }
+            UpdateTotal();
+        }
+        private void UpdateTotal()
+        {
+            double total = listTicket.Sum(p => p.Total);
+            TotalTextBlock.Text = total.ToString("C2");// Formato moneda
+        }
+        private void CrearBotonesDinamicos()
+        {
+            uGridBreakfast.Children.Clear();
+            uGridDrink.Children.Clear();
+            uGridCoffe.Children.Clear();
+
+            pm.listProducto.Clear();
+            pm.ReadProduct();
+
+            foreach (Producto p in pm.listProducto)
+            {
+                // Crear el StackPanel para el contenido del botón
+                StackPanel sp = new StackPanel
+                {
+                    Orientation = Orientation.Horizontal
+                };
+
+                // Decodificar la imagen Base64 y crear un BitmapImage
+                BitmapImage bitmap = new BitmapImage();
+                if (!string.IsNullOrEmpty(p.Imagen))
+                {
+                    try
+                    {
+                        byte[] imageBytes = Convert.FromBase64String(p.Imagen);
+                        using (MemoryStream ms = new MemoryStream(imageBytes))
+                        {
+                            bitmap.BeginInit();
+                            bitmap.StreamSource = ms;
+                            bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                            bitmap.EndInit();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al cargar la imagen del producto '{p.Nombre}': {ex.Message}");
+                        continue; // Pasar al siguiente producto si ocurre un error
+                    }
+                }
+
+                // Crear el control de la imagen
+                Image img = new Image
+                {
+                    Source = bitmap,
+                    Width = 50,
+                    Height = 50,
+                    Margin = new Thickness(5)
+                };
+
+                // Crear el control del texto
+                TextBlock tb = new TextBlock
+                {
+                    Text = $"{p.Nombre}\nPrecio: {p.Precio:C2}",
+                    VerticalAlignment = VerticalAlignment.Center,
+                    FontSize = 14,
+                    Margin = new Thickness(5, 0, 0, 0)
+                };
+
+                // Agregar la imagen y el texto al StackPanel
+                sp.Children.Add(img);
+                sp.Children.Add(tb);
+
+                // Crear el botón y asignar el StackPanel como contenido
+                Button boton = new Button
+                {
+                    Content = sp,
+                    Margin = new Thickness(5),
+                    Tag = p.Precio // Guardar el producto completo en el Tag para acceso posterior
+                };
+                boton.CommandParameter = p.Nombre;
+
+                boton.Background = new SolidColorBrush(Colors.White);
+                // Asignar el evento Click
+                boton.Click += Boton_Click;
+
+                // Clasificar y agregar el botón al contenedor correspondiente
+                if (p.Categoria == 1)
+                {
+                    uGridBreakfast.Children.Add(boton);
+                }
+                else if (p.Categoria == 2)
+                {
+                    uGridDrink.Children.Add(boton);
+                }
+                else if (p.Categoria == 3)
+                {
+                    uGridCoffe.Children.Add(boton);
+                }
+
+            }
         }
 
         
+
+        private void Boton_Click(object sender, RoutedEventArgs e)
+        {
+            // Obtener el botón que ha sido clicado
+            Button boton = (Button)sender;
+            // Mostrar un mensaje con el contenido del botón
+            logic_btnProduct(boton.CommandParameter.ToString(), Convert.ToDouble(boton.Tag.ToString()));
+        }
+
+        #endregion
+
+
+
+        #region Aux buttons
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if(dtgTicket.SelectedItem != null)
+            {
+                Producto p = (Producto)dtgTicket.SelectedItem;
+                listTicket.Remove(p);
+                dtgTicket.Items.Refresh();
+                UpdateTotal();
+            }
+        }
+
+        private void btnPay_Click(object sender, RoutedEventArgs e)
+        {
+            if (listTicket.Count > 0)
+            {
+                double total = listTicket.Sum(p => p.Total);
+                string outStr = "";
+                foreach(Producto p in listTicket){
+                    outStr += "#Producto: "+p.Nombre+", Cantidad: "+p.Unidades+", Precio: "+p.Precio+" €, Total: "+p.Total+ " €\n";
+                }
+                outStr += "\n" + "*************************************************************";
+                outStr += "************************************************-> TOTAL A PAGAR: " + total.ToString("F2") + " € <-************";
+                MessageBox.Show(outStr);
+            }
+            else
+            {
+                MessageBox.Show("No hay productos");
+            }
+
+        }
+
+        private void btnImage_Click(object sender, RoutedEventArgs e)
+        {
+            // Crear el diálogo para seleccionar archivos
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = "Seleccionar Imagen",
+                Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
+            };
+
+            // Mostrar el diálogo y verificar si el usuario seleccionó un archivo
+            if (openFileDialog.ShowDialog() == true)
+            {
+                try
+                {
+                    // Cargar la imagen seleccionada y mostrarla en el control Image
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(openFileDialog.FileName);
+                    bitmap.EndInit();
+
+                    byte[] imageBytes = File.ReadAllBytes(openFileDialog.FileName);
+                    imageBase64 = Convert.ToBase64String(imageBytes);
+
+                    ImagenMostrada.Source = bitmap;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar la imagen: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            string nombre = txtNameProduct.Text.Trim();
+            string precioTexto = txtPrice.Text.Trim().Replace(',','.');
+            ComboBoxItem categoriaSeleccionada = (ComboBoxItem)cbCategory.SelectedItem;
+
+            // Validaciones básicas
+            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(precioTexto) || categoriaSeleccionada == null)
+            {
+                MessageBox.Show("Por favor, complete todos los campos.");
+                return;
+            }
+
+            if (!double.TryParse(precioTexto, NumberStyles.Any, CultureInfo.InvariantCulture, out double precio))
+            {
+                MessageBox.Show("Por favor, ingrese un precio válido.");
+                return;
+            }
+
+            int categoria = int.Parse(categoriaSeleccionada.Tag.ToString());
+
+            // Verificar si hay una imagen
+            if (string.IsNullOrEmpty(imageBase64))
+            {
+                MessageBox.Show("Por favor, seleccione una imagen.");
+                return;
+            }
+
+            // Insertar en la base de datos
+            try
+            {
+               Producto producto = new Producto(pm.getLastId(), nombre, precio, categoria, imageBase64);
+                pm.AddProduct(producto);
+                MessageBox.Show("Producto añadido correctamente.");
+                CrearBotonesDinamicos();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al añadir el producto: {ex.Message}");
+            }
+
+            // Limpiar campos
+            txtNameProduct.Clear();
+            txtPrice.Clear();
+            cbCategory.SelectedIndex = -1;
+            ImagenMostrada.Source = null;
+            imageBase64 = string.Empty;
+        }
+
+        private void btncambiarImage_Click(object sender, RoutedEventArgs e)
+        {
+            // Crear el diálogo para seleccionar archivos
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = "Seleccionar Imagen",
+                Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
+            };
+
+            // Mostrar el diálogo y verificar si el usuario seleccionó un archivo
+            if (openFileDialog.ShowDialog() == true)
+            {
+                try
+                {
+                    // Cargar la imagen seleccionada y mostrarla en el control Image
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(openFileDialog.FileName);
+                    bitmap.EndInit();
+
+                    byte[] imageBytes = File.ReadAllBytes(openFileDialog.FileName);
+                    imageBase64 = Convert.ToBase64String(imageBytes);
+
+                    ImagenCambio.Source = bitmap;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar la imagen: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        private void btnModifyProduct_Click(object sender, RoutedEventArgs e)
+        {
+            string nombre = txtActNameProduct.Text.Trim();
+            string nuevoNombre = txtNewNameProduct.Text.Trim();
+            string precioTexto = txtNewPrice.Text.Trim().Replace(',','.');
+            ComboBoxItem categoriaSeleccionada = (ComboBoxItem)cbCategoryModify.SelectedItem;
+
+            // Validaciones básicas
+            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(nuevoNombre) || string.IsNullOrWhiteSpace(precioTexto) || categoriaSeleccionada == null)
+            {
+                MessageBox.Show("Por favor, complete todos los campos.");
+                return;
+            }
+
+            if (!double.TryParse(precioTexto, NumberStyles.Any, CultureInfo.InvariantCulture, out double precio))
+            {
+                MessageBox.Show("Por favor, ingrese un precio válido.");
+                return;
+            }
+
+            int categoria = int.Parse(categoriaSeleccionada.Tag.ToString());
+
+            // Verificar si hay una imagen
+            if (string.IsNullOrEmpty(imageBase64))
+            {
+                MessageBox.Show("Por favor, seleccione una imagen.");
+                return;
+            }
+
+            // Insertar en la base de datos
+            try
+            {
+                Producto producto = pm.listProducto.FirstOrDefault(p => p.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase));
+                producto.Nombre = nuevoNombre;
+                producto.Precio = precio;
+                producto.Categoria = categoria;
+                producto.Imagen = imageBase64;
+                pm.UpdateProduct(producto);
+                MessageBox.Show("Producto modificado correctamente.");
+                CrearBotonesDinamicos();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al modificar el producto: {ex.Message}");
+            }
+
+            // Limpiar campos
+            txtActNameProduct.Clear();
+            txtNewNameProduct.Clear();
+            txtNewPrice.Clear();
+            cbCategory.SelectedIndex = -1;
+            ImagenCambio.Source = null;
+            imageBase64 = string.Empty;
+
+
+        }
+        #endregion
+
+        private void btnDeleteProduct_Click(object sender, RoutedEventArgs e)
+        {
+            string nombre = txtDelNameProduct.Text;
+            if (string.IsNullOrWhiteSpace(nombre))
+            { 
+                MessageBox.Show("Por favor, ingrese un nombre.");
+                return;
+            }
+            try
+            {
+                Producto producto = pm.listProducto.FirstOrDefault(p => p.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase));
+                pm.DeleteProduct(producto);
+                MessageBox.Show("Producto eliminado correctamente.");
+                CrearBotonesDinamicos();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al eliminar el producto: {ex.Message}");
+            }
+            txtDelNameProduct.Clear();
+        }
     }
 }

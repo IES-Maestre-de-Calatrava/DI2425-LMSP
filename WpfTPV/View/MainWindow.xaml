@@ -17,103 +17,13 @@
         </Grid.ColumnDefinitions>
         <TabControl Name="tbcProducts" BorderThickness="0" Grid.Row="0" Grid.Column="0" FontSize="12"  TabStripPlacement="Top" Background="Coral" FontFamily="Cascadia Code">
             <TabItem Header="Desayuno" IsSelected="True">
-                  
-                <UniformGrid x:Name="uGridBreakfast">
-                    <Button Name="btnToast" Margin="5" Background="White" Click="btnToast_Click">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/sources/toast.png" Width="50" Height="50" Margin="10"/>
-                            <TextBlock Text="Tostada" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Button>
-                    <Button Name="btnCroissant" Margin="5" Background="White" Click="btnCroissant_Click">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/sources/croissant.png" Width="50" Height="50" Margin="10"/>
-                            <TextBlock Text="Croissant" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Button>
-                    <Button Name="btnPorra" Margin="5" Background="White" Click="btnPorra_Click">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/sources/porra.png" Width="50" Height="50" Margin="10"/>
-                            <TextBlock Text="Porra" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Button>
-                    <Button Name="btnChurro" Margin="5" Background="White" Click="btnChurro_Click">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/sources/churro.png" Width="50" Height="50" Margin="10"/>
-                            <TextBlock Text="Churro" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Button>
-                </UniformGrid>
-                
+                <UniformGrid x:Name="uGridBreakfast"/>
             </TabItem>
             <TabItem Header="Refresco">
-                <UniformGrid Name="uGridDrink">
-                    <Button Name="btnCocaCola" Margin="5" Background="White">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/sources/cola.png" Width="25" Height="25" Margin="10"/>
-                            <TextBlock Text="CocaCola" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Button>
-                    <Button Name="btnCocacolaZero" Margin="5" Background="White">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/sources/colaZero.png" Width="25" Height="25" Margin="10"/>
-                            <TextBlock Text="CocaCola Zero" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Button>
-                    <Button Name="btnFantaLemon" Margin="5" Background="White">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/sources/fantaLemon.png" Width="25" Height="25" Margin="10"/>
-                            <TextBlock Text="Fanta Limón" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Button>
-                    <Button Name="btnFantaOrange" Margin="5" Background="White">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/sources/fantaOrange.png" Width="25" Height="25" Margin="10"/>
-                            <TextBlock Text="Fanta Naranja" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Button>
-                    <Button Name="btnFuzeTea" Margin="5" Background="White">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/sources/fuzeTea.png" Width="25" Height="25" Margin="10"/>
-                            <TextBlock Text="FuzeTea" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Button>
-                
-                </UniformGrid>
+                <UniformGrid Name="uGridDrink"/>
             </TabItem>
             <TabItem Header="Café">
-                <UniformGrid x:Name="uGridCoffe">
-                    <Button Name="btnCoffe" Margin="5" Background="White">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/sources/coffe.jpg" Width="50" Height="50" Margin="10"/>
-                            <TextBlock Text="Café Solo" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Button>
-                    <Button Name="btnCoffeMilk" Margin="5" Background="White">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/sources/coffeMilk.jpg" Width="50" Height="50" Margin="10"/>
-                            <TextBlock Text="Café leche" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Button>
-                    <Button Name="btnCortadoCoffe" Margin="5" Background="White">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/sources/coffeCort.jpg" Width="50" Height="50" Margin="10"/>
-                            <TextBlock Text="Café cortado" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Button>
-                    <Button Name="btnColaCao" Margin="5" Background="White">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/sources/colaCao.jpg" Width="50" Height="50" Margin="10"/>
-                            <TextBlock Text="ColaCao" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Button>
-                    <Button Name="btnChoco" Margin="5" Background="White">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/sources/choco.jpg" Width="50" Height="50" Margin="10"/>
-                            <TextBlock Text="Chocolate" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Button>
-                </UniformGrid>
+                <UniformGrid x:Name="uGridCoffe"/>
             </TabItem>
         </TabControl>
         <Grid Grid.Row="1" Grid.Column="1">
@@ -128,44 +38,44 @@
                 </Grid.RowDefinitions>
                 <TextBox x:Name="txtResult" Grid.Row="0"  Text="0.0" FontSize="20" FontFamily="Cascadia Code" TextAlignment="Right"/>
                 <Button x:Name="btnE" Grid.Row="1" Content="=" Background="LightGreen" />
-         
+
             </Grid>
             <UniformGrid x:Name="ugridCalcu" Grid.Column="0" Grid.Row="1">
 
-                <Button x:Name="btn1" Content="1"/>
-                <Button x:Name="btn2" Content="2"/>
-                <Button x:Name="btn3" Content="3"/>
-                <Button x:Name="btnC" Content="C" Background="LightSalmon"/>
-                <Button x:Name="btn4" Content="4"/>
-                <Button x:Name="btn5" Content="5"/>
-                <Button x:Name="btn6" Content="6"/>
-                <Button x:Name="btnX" Content="x"/>
-                <Button x:Name="btn7" Content="7"/>
-                <Button x:Name="btn8" Content="8"/>
-                <Button x:Name="btn9" Content="9"/>
-                <Button x:Name="btnD" Content="/"/>
-                <Button x:Name="btn0" Content="0"/>
-                <Button x:Name="btnP" Content="+"/>
-                <Button x:Name="btnM" Content="-"/>
-                <Button x:Name="btnDot" Content="."/>
+                <Button x:Name="btn1" Content="1" Click="btn1_Click"/>
+                <Button x:Name="btn2" Content="2" Click="btn2_Click"/>
+                <Button x:Name="btn3" Content="3" Click="btn3_Click"/>
+                <Button x:Name="btnC" Content="C" Background="LightSalmon" Click="btnC_Click"/>
+                <Button x:Name="btn4" Content="4" Click="btn4_Click"/>
+                <Button x:Name="btn5" Content="5" Click="btn5_Click"/>
+                <Button x:Name="btn6" Content="6" Click="btn6_Click"/>
+                <Button x:Name="btnX" Content="x" Click="btnX_Click"/>
+                <Button x:Name="btn7" Content="7" Click="btn7_Click"/>
+                <Button x:Name="btn8" Content="8" Click="btn8_Click"/>
+                <Button x:Name="btn9" Content="9" Click="btn9_Click"/>
+                <Button x:Name="btnD" Content="/" Click="btnD_Click"/>
+                <Button x:Name="btn0" Content="0" Click="btn0_Click"/>
+                <Button x:Name="btnP" Content="+" Click="btnP_Click"/>
+                <Button x:Name="btnM" Content="-" Click="btnM_Click"/>
+                <Button x:Name="btnDot" Content="." Click="btnDot_Click"/>
             </UniformGrid>
-            
-            
+
+
         </Grid>
         <Grid x:Name="main" Grid.Row="0" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            
+
             <DataGrid x:Name="dtgTicket" Grid.Row="0" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" Background="White" BorderThickness="0" FontSize="12" FontFamily="Cascadia Code">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Producto" Binding="{Binding Product}"/>
-                    <DataGridTextColumn Header="Precio" Binding="{Binding Price}"/>
-                    <DataGridTextColumn Header="Cantidad" Binding="{Binding Quantity}"/>
+                    <DataGridTextColumn Header="Producto" Binding="{Binding Nombre}"/>
+                    <DataGridTextColumn Header="Precio" Binding="{Binding Precio}"/>
+                    <DataGridTextColumn Header="Cantidad" Binding="{Binding Unidades}"/>
                     <DataGridTextColumn Header="Total" Binding="{Binding Total}"/>
                 </DataGrid.Columns>
-             </DataGrid>
+            </DataGrid>
             <Grid x:Name="buttons_grid" Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -179,9 +89,12 @@
                     <ColumnDefinition Width="*"/>
 
                 </Grid.ColumnDefinitions>
-                
-                <Button x:Name="btnDelete" Grid.Column="1" Grid.Row="1" Content="Borrar" FontSize="12" FontFamily="Cascadia Code"/>
-                <Button x:Name="btnPay" Grid.Column="2" Grid.Row="1" Content="Pagar" FontSize="12" FontFamily="Cascadia Code"/>
+                <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+                    <TextBlock Text="Total: " FontWeight="Bold" />
+                    <TextBlock x:Name="TotalTextBlock" FontWeight="Bold" />
+                </StackPanel>
+                <Button x:Name="btnDelete" Margin="5" Grid.Column="2" Grid.Row="1" Content="Borrar" FontSize="12" FontFamily="Cascadia Code" Click="btnDelete_Click"/>
+                <Button x:Name="btnPay" Margin="5" Grid.Column="3" Grid.Row="1" Content="Pagar" FontSize="12" FontFamily="Cascadia Code" Height="26" VerticalAlignment="Top" Click="btnPay_Click"/>
             </Grid>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="0">
@@ -192,58 +105,57 @@
                     </StackPanel>
                 </TabItem>
                 <TabItem Header="Añadir">
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="Nombre de producto:"/>
-                        <TextBox x:Name="txtNameProduct" Width="100"/>
-                        <TextBlock Text="Precio:"/>
-                        <TextBox x:Name="txtPrice" Width="100"/>
-                        <TextBlock Text="Categoría:"/>
-                        <ComboBox>
-                            <ComboBoxItem Content="Desayuno"/>
-                            <ComboBoxItem Content="Refresco"/>
-                            <ComboBoxItem Content="Café"/>
-                        </ComboBox>
-                        <TextBlock Text="Imagen:"/>
-                        <Image x:Name="imgProduct" Width="100" Height="100"/>
-                        <Button x:Name="btnImage" Content="Seleccionar imagen"/>
-                        <Button x:Name="btnAdd" Content="Añadir" Background="LightGreen"/>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                        <StackPanel Orientation="Vertical">
 
-                    </StackPanel>
+                            <TextBlock Text="Nombre de producto:"/>
+                            <TextBox x:Name="txtNameProduct" Width="100"/>
+                            <TextBlock Text="Precio:"/>
+                            <TextBox x:Name="txtPrice" Width="100"/>
+                            <TextBlock Text="Categoría:"/>
+                            <ComboBox x:Name="cbCategory">
+                                <ComboBoxItem Content="Desayuno" Tag="1"/>
+                                <ComboBoxItem Content="Refresco" Tag="2"/>
+                                <ComboBoxItem Content="Café" Tag="3"/>
+                            </ComboBox>
+                            <TextBlock Text="Imagen:"/>
+                            <Image Name="ImagenMostrada" Width="100" Height="100" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1" />
+                            <Button x:Name="btnImage" Content="Seleccionar imagen" Click="btnImage_Click"/>
+                            <Button x:Name="btnAdd" Content="Añadir" Background="LightGreen" Click="btnAdd_Click"/>
+
+                        </StackPanel>
+                    </ScrollViewer>
                 </TabItem>
                 <TabItem Header="Modificar">
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="Categoría:"/>
-                        <ComboBox>
-                            <ComboBoxItem Content="Desayuno"/>
-                            <ComboBoxItem Content="Refresco"/>
-                            <ComboBoxItem Content="Café"/>
-                        </ComboBox>
-                        <TextBlock Text="Nombre actual de producto:"/>
-                        <TextBox x:Name="txtActNameProduct" Width="100"/>
-                        <TextBlock Text="Nuevo nombre de producto:"/>
-                        <TextBox x:Name="txtNewNameProduct" Width="100"/>
-                        <TextBlock Text="Nuevo precio:"/>
-                        <TextBox x:Name="txtNewPrice" Width="100"/>
-                        
-                        <TextBlock Text="Nueva Imagen:"/>
-                        <Image x:Name="newimgProduct" Width="100" Height="100"/>
-                        <Button x:Name="btncambiarImage" Content="Seleccionar nueva imagen"/>
-                        <Button x:Name="btnModifyProduct" Content="Modificar" Background="LightGreen"/>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Categoría:"/>
+                            <ComboBox x:Name="cbCategoryModify">
+                                <ComboBoxItem Content="Desayuno" Tag="1"/>
+                                <ComboBoxItem Content="Refresco" Tag="2"/>
+                                <ComboBoxItem Content="Café" Tag="3"/>
+                            </ComboBox>
+                            <TextBlock Text="Nombre actual de producto:"/>
+                            <TextBox x:Name="txtActNameProduct" Width="100"/>
+                            <TextBlock Text="Nuevo nombre de producto:"/>
+                            <TextBox x:Name="txtNewNameProduct" Width="100"/>
+                            <TextBlock Text="Nuevo precio:"/>
+                            <TextBox x:Name="txtNewPrice" Width="100"/>
 
-                    </StackPanel>
+                            <TextBlock Text="Nueva Imagen:"/>
+                            <Image x:Name="ImagenCambio" Width="100" Height="100" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1"/>
+                            <Button x:Name="btncambiarImage" Content="Seleccionar nueva imagen" Click="btncambiarImage_Click"/>
+                            <Button x:Name="btnModifyProduct" Content="Modificar" Background="LightGreen" Click="btnModifyProduct_Click"/>
+
+                        </StackPanel>
+                    </ScrollViewer>
                 </TabItem>
                 <TabItem Header="Eliminar">
                     <StackPanel>
-                        <TextBlock Text="Categoría:"/>
-                        <ComboBox>
-                            <ComboBoxItem Content="Desayuno"/>
-                            <ComboBoxItem Content="Refresco"/>
-                            <ComboBoxItem Content="Café"/>
-                        </ComboBox>
                         <TextBlock Text="Nombre de producto:"/>
                         <TextBox x:Name="txtDelNameProduct" Width="100"/>
                         <TextBlock Text=""/>
-                        <Button x:Name="btnDeleteProduct" Content="Eliminar" Background="LightSalmon"/>
+                        <Button x:Name="btnDeleteProduct" Content="Eliminar" Background="LightSalmon" Click="btnDeleteProduct_Click"/>
                     </StackPanel>
                 </TabItem>
             </TabControl>

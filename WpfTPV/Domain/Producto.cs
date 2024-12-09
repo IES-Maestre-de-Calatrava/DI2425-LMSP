@@ -18,12 +18,31 @@ namespace WpfTPV.Domain
         private String nombre;
         private double precio;
         private int unidades;
-        public Producto(int idproducto, String nombre, double precio, int unidades)
+        private double total;
+        private int categoria;
+        private String imagen;
+        
+        public Producto(int idproducto, String nombre, double precio, int categoria, string imagen)
         {
             this.idproducto = idproducto;
             this.nombre = nombre;
             this.precio = precio;
+            this.categoria = categoria;
+            this.imagen = imagen;
+        }
+        public Producto(String name, double precio, int categoria, string imagen)
+        {
+            this.Nombre = name;
+            this.precio = precio;
+            this.categoria= categoria;
+            this.imagen = imagen;
+        }
+        public Producto(String name, double precio, int unidades)
+        {
+            this.Nombre = name;
+            this.precio = precio;
             this.unidades = unidades;
+            this.total= precio * unidades;
         }
         public int Idproducto
         {
@@ -44,6 +63,21 @@ namespace WpfTPV.Domain
         {
             get { return unidades; }
             set { unidades = value; }
+        }
+        public double Total
+        {
+            get { return total; }
+            set { total = value; }
+        }
+        public int Categoria
+        {
+            get { return categoria; }
+            set { categoria = value; }
+        } 
+        public String Imagen
+        {
+            get { return imagen; }
+            set { imagen = value; }
         }
     }
 }

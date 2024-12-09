@@ -15,7 +15,7 @@ namespace DataGridPersonas.persistence
 
     }
 
-    public static DBBroker obtenerAgente()
+    public static DBBroker ObtenerAgente()
     {
       if (DBBroker._instancia == null)
       {
@@ -24,7 +24,7 @@ namespace DataGridPersonas.persistence
       return DBBroker._instancia;
     }
 
-    public List<Object> leer(String sql)
+    public List<Object> Leer(String sql)
     {
       List<Object> resultado = new List<object>();
       List<Object> fila;
@@ -32,7 +32,7 @@ namespace DataGridPersonas.persistence
       MySql.Data.MySqlClient.MySqlDataReader reader;
       MySql.Data.MySqlClient.MySqlCommand com = new MySql.Data.MySqlClient.MySqlCommand(sql, DBBroker.conexion);
 
-      conectar();
+      Conectar();
       reader = com.ExecuteReader();
       while (reader.Read())
       {
@@ -44,26 +44,26 @@ namespace DataGridPersonas.persistence
         }
         resultado.Add(fila);
       }
-      desconectar();
+      Desconectar();
       return resultado;
     }
-    public int modificar(String sql)
+    public int Modificar(String sql)
     {
       MySql.Data.MySqlClient.MySqlCommand com = new MySql.Data.MySqlClient.MySqlCommand(sql, DBBroker.conexion);
       int resultado;
-      conectar();
+      Conectar();
       resultado = com.ExecuteNonQuery();
-      desconectar();
+      Desconectar();
       return resultado;
     }
-    private void conectar()
+    private void Conectar()
     {
       if (DBBroker.conexion.State == System.Data.ConnectionState.Closed)
       {
         DBBroker.conexion.Open();
       }
     }
-    private void desconectar()
+    private void Desconectar()
     {
       if (DBBroker.conexion.State == System.Data.ConnectionState.Open)
       {
