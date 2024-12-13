@@ -17,13 +17,19 @@
         </Grid.ColumnDefinitions>
         <TabControl Name="tbcProducts" BorderThickness="0" Grid.Row="0" Grid.Column="0" FontSize="12"  TabStripPlacement="Top" Background="Coral" FontFamily="Cascadia Code">
             <TabItem Header="Desayuno" IsSelected="True">
+             
                 <UniformGrid x:Name="uGridBreakfast"/>
+             
             </TabItem>
             <TabItem Header="Refresco">
+                
                 <UniformGrid Name="uGridDrink"/>
+                
             </TabItem>
             <TabItem Header="Café">
+                
                 <UniformGrid x:Name="uGridCoffe"/>
+                
             </TabItem>
         </TabControl>
         <Grid Grid.Row="1" Grid.Column="1">
@@ -70,8 +76,8 @@
 
             <DataGrid x:Name="dtgTicket" Grid.Row="0" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" Background="White" BorderThickness="0" FontSize="12" FontFamily="Cascadia Code">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Producto" Binding="{Binding Nombre}"/>
-                    <DataGridTextColumn Header="Precio" Binding="{Binding Precio}"/>
+                    <DataGridTextColumn Header="Producto" Binding="{Binding Producto.Nombre}"/>
+                    <DataGridTextColumn Header="Precio" Binding="{Binding Producto.Precio}"/>
                     <DataGridTextColumn Header="Cantidad" Binding="{Binding Unidades}"/>
                     <DataGridTextColumn Header="Total" Binding="{Binding Total}"/>
                 </DataGrid.Columns>
@@ -87,7 +93,6 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
-
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
                     <TextBlock Text="Total: " FontWeight="Bold" />

@@ -44,7 +44,7 @@ namespace WpfTPV.Persistence.Manage
         }
         public void AddProduct(Producto p)
         {
-            DBBroker.ObtenerAgente().Modificar("insert into producto values("+p.Idproducto+",'" + p.Nombre + "'," + p.Precio + "," + p.Categoria + ",'" + p.Imagen + "');");
+            DBBroker.ObtenerAgente().Modificar("insert into producto values("+p.Idproducto+",'" + p.Nombre + "'," + p.Precio.ToString().Replace(',','.') + "," + p.Categoria + ",'" + p.Imagen + "');");
             listProducto.Add(p);
         }
         public void DeleteProduct(Producto p)
@@ -54,7 +54,7 @@ namespace WpfTPV.Persistence.Manage
         }
         public void UpdateProduct(Producto p)
         {
-            DBBroker.ObtenerAgente().Modificar("update producto set nombre='" + p.Nombre + "', precio=" + p.Precio + ", categoria=" + p.Categoria + ", imagen='" + p.Imagen + "' where idproducto=" + p.Idproducto + ";");
+            DBBroker.ObtenerAgente().Modificar("update producto set nombre='" + p.Nombre + "', precio=" + p.Precio.ToString().Replace(',','.') + ", categoria=" + p.Categoria + ", imagen='" + p.Imagen + "' where idproducto=" + p.Idproducto + ";");
         }
     }
 }

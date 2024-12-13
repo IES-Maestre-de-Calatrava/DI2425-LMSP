@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,22 +27,28 @@ namespace WpfTPV
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Producto productoSeleccionado;
-        private List<Producto> listTicket;
+        private Producto_Ticket productoSeleccionado;
+        private List<Producto_Ticket> listTicket;
         private ProductManager pm;
+        private ProductTicketManager ptm;
+        private TicketManager tm;
+        private Ticket ticket;
         private string imageBase64 = string.Empty;
+
         public MainWindow()
         {
             InitializeComponent();
             pm = new ProductManager();
+            ptm = new ProductTicketManager();
+            tm = new TicketManager();
             pm.ReadProduct();
             CrearBotonesDinamicos();
-            listTicket = new List<Producto>();
+            listTicket = new List<Producto_Ticket>();
             dtgTicket.ItemsSource = listTicket;
             
             
         }
-        #region Calculator
+        #region Calculator buttons
         private void btnC_Click(object sender, RoutedEventArgs e)
         {
             txtResult.Text = "";
@@ -109,42 +116,53 @@ namespace WpfTPV
         }
         #endregion
         #region Product buttons
-        private void logic_btnProduct(String name, double price)
+        private void logic_btnProduct(String name)
         {
             if (txtResult.Text == "" || txtResult.Text == "0.0")
             {
-                foreach(Producto p in listTicket)
+                foreach(Producto_Ticket pt in listTicket)
                 {
-                    if (p.Nombre == name)
+                    if (pt.Producto.Nombre == name)
                     {
-                        p.Unidades++;
-                        p.Total = p.Precio * p.Unidades;
+                        pt.Unidades++;
+                        pt.Total = pt.Producto.Precio * pt.Unidades;
                         dtgTicket.Items.Refresh();
                         UpdateTotal();
                         return;
                     }
                 }
-                
-                productoSeleccionado = new Producto(name, price, 1);
+                productoSeleccionado = new Producto_Ticket(1);
+                //ticket = new Ticket(tm.getLastId(),DateTime.Now);
+                //ticket.Cliente = "Cliente1";
+                //ticket.Total = 10;
+                //tm.AddTicket(ticket);
+                productoSeleccionado.Producto = pm.listProducto.Find(p => p.Nombre == name);
+                productoSeleccionado.Idproducto = productoSeleccionado.Producto.Idproducto;
+                productoSeleccionado.Total = productoSeleccionado.Producto.Precio * productoSeleccionado.Unidades;
+                //productoSeleccionado.Idticket = tm.getLastId()-1;
+                //ptm.AddProductTicket(productoSeleccionado);
                 listTicket.Add(productoSeleccionado);
+
                 dtgTicket.Items.Refresh();
 
             }
             else if (txtResult.Text.Contains("*"))
             {
                 string[] result = txtResult.Text.Split('*');
-                foreach (Producto p in listTicket)
+                foreach (Producto_Ticket pt in listTicket)
                 {
-                    if (p.Nombre == name)
+                    if (pt.Producto.Nombre == name)
                     {
-                        p.Unidades+= Convert.ToInt32(result[0]);
-                        p.Total = p.Precio * p.Unidades;
+                        pt.Unidades+= Convert.ToInt32(result[0]);
+                        pt.Total = pt.Producto.Precio * pt.Unidades;
                         dtgTicket.Items.Refresh();
                         UpdateTotal();
                         return;
                     }
                 }
-                productoSeleccionado = new Producto(name, price, Convert.ToInt32(result[0]));
+                productoSeleccionado=new Producto_Ticket(Convert.ToInt32(result[0]));
+                productoSeleccionado.Producto = pm.listProducto.Find(p => p.Nombre == name);
+                productoSeleccionado.Total = productoSeleccionado.Producto.Precio * productoSeleccionado.Unidades;
                 listTicket.Add(productoSeleccionado);
                 dtgTicket.Items.Refresh();
             }
@@ -166,7 +184,6 @@ namespace WpfTPV
 
             foreach (Producto p in pm.listProducto)
             {
-                // Crear el StackPanel para el contenido del botón
                 StackPanel sp = new StackPanel
                 {
                     Orientation = Orientation.Horizontal
@@ -190,11 +207,10 @@ namespace WpfTPV
                     catch (Exception ex)
                     {
                         MessageBox.Show($"Error al cargar la imagen del producto '{p.Nombre}': {ex.Message}");
-                        continue; // Pasar al siguiente producto si ocurre un error
+                        continue; 
                     }
                 }
 
-                // Crear el control de la imagen
                 Image img = new Image
                 {
                     Source = bitmap,
@@ -203,7 +219,7 @@ namespace WpfTPV
                     Margin = new Thickness(5)
                 };
 
-                // Crear el control del texto
+                
                 TextBlock tb = new TextBlock
                 {
                     Text = $"{p.Nombre}\nPrecio: {p.Precio:C2}",
@@ -212,24 +228,24 @@ namespace WpfTPV
                     Margin = new Thickness(5, 0, 0, 0)
                 };
 
-                // Agregar la imagen y el texto al StackPanel
+               
                 sp.Children.Add(img);
                 sp.Children.Add(tb);
 
-                // Crear el botón y asignar el StackPanel como contenido
+           
                 Button boton = new Button
                 {
                     Content = sp,
                     Margin = new Thickness(5),
-                    Tag = p.Precio // Guardar el producto completo en el Tag para acceso posterior
+                    Tag = p.Nombre 
                 };
-                boton.CommandParameter = p.Nombre;
+       
 
                 boton.Background = new SolidColorBrush(Colors.White);
-                // Asignar el evento Click
+               
                 boton.Click += Boton_Click;
 
-                // Clasificar y agregar el botón al contenedor correspondiente
+               
                 if (p.Categoria == 1)
                 {
                     uGridBreakfast.Children.Add(boton);
@@ -246,27 +262,20 @@ namespace WpfTPV
             }
         }
 
-        
-
         private void Boton_Click(object sender, RoutedEventArgs e)
-        {
-            // Obtener el botón que ha sido clicado
+        { 
             Button boton = (Button)sender;
-            // Mostrar un mensaje con el contenido del botón
-            logic_btnProduct(boton.CommandParameter.ToString(), Convert.ToDouble(boton.Tag.ToString()));
+            logic_btnProduct(boton.Tag.ToString());
         }
 
         #endregion
-
-
-
         #region Aux buttons
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             if(dtgTicket.SelectedItem != null)
             {
-                Producto p = (Producto)dtgTicket.SelectedItem;
-                listTicket.Remove(p);
+                Producto_Ticket pt = (Producto_Ticket)dtgTicket.SelectedItem;
+                listTicket.Remove(pt);
                 dtgTicket.Items.Refresh();
                 UpdateTotal();
             }
@@ -276,14 +285,18 @@ namespace WpfTPV
         {
             if (listTicket.Count > 0)
             {
-                double total = listTicket.Sum(p => p.Total);
-                string outStr = "";
-                foreach(Producto p in listTicket){
-                    outStr += "#Producto: "+p.Nombre+", Cantidad: "+p.Unidades+", Precio: "+p.Precio+" €, Total: "+p.Total+ " €\n";
-                }
-                outStr += "\n" + "*************************************************************";
-                outStr += "************************************************-> TOTAL A PAGAR: " + total.ToString("F2") + " € <-************";
-                MessageBox.Show(outStr);
+                //double total = listTicket.Sum(p => p.Total);
+                //string outStr = "";
+                //foreach(Producto_Ticket pt in listTicket){
+                //    outStr += "# Producto: "+pt.Producto.Nombre+", Cantidad: "+pt.Unidades+", Precio: "+pt.Producto.Precio+" €, Total: "+pt.Total+ " €\n";
+                //}
+                //outStr += "\n" + "*************************************************************";
+                //outStr += "************************************************-> TOTAL A PAGAR: " + total.ToString("F2") + " € <-************";
+                //MessageBox.Show(outStr);
+                View.TicketWindow ticketWindow = new View.TicketWindow(listTicket);
+                ticketWindow.Left = 100;
+                ticketWindow.Top = 10;
+                ticketWindow.Show();
             }
             else
             {
@@ -294,14 +307,12 @@ namespace WpfTPV
 
         private void btnImage_Click(object sender, RoutedEventArgs e)
         {
-            // Crear el diálogo para seleccionar archivos
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
                 Title = "Seleccionar Imagen",
                 Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
             };
 
-            // Mostrar el diálogo y verificar si el usuario seleccionó un archivo
             if (openFileDialog.ShowDialog() == true)
             {
                 try
@@ -327,32 +338,33 @@ namespace WpfTPV
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             string nombre = txtNameProduct.Text.Trim();
-            string precioTexto = txtPrice.Text.Trim().Replace(',','.');
+            string precioTexto = txtPrice.Text.Replace(',','.');
             ComboBoxItem categoriaSeleccionada = (ComboBoxItem)cbCategory.SelectedItem;
 
-            // Validaciones básicas
+        
             if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(precioTexto) || categoriaSeleccionada == null)
             {
                 MessageBox.Show("Por favor, complete todos los campos.");
                 return;
             }
-
-            if (!double.TryParse(precioTexto, NumberStyles.Any, CultureInfo.InvariantCulture, out double precio))
+            Double precio;
+            if (!Double.TryParse(precioTexto, NumberStyles.Any, CultureInfo.InvariantCulture, out precio))
             {
                 MessageBox.Show("Por favor, ingrese un precio válido.");
                 return;
             }
+            
 
             int categoria = int.Parse(categoriaSeleccionada.Tag.ToString());
 
-            // Verificar si hay una imagen
+        
             if (string.IsNullOrEmpty(imageBase64))
             {
-                MessageBox.Show("Por favor, seleccione una imagen.");
-                return;
+                MessageBox.Show("Se recomienda añadir una imagen");
+                btnImage_Click(sender,e);
             }
 
-            // Insertar en la base de datos
+ 
             try
             {
                Producto producto = new Producto(pm.getLastId(), nombre, precio, categoria, imageBase64);
@@ -366,7 +378,6 @@ namespace WpfTPV
                 MessageBox.Show($"Error al añadir el producto: {ex.Message}");
             }
 
-            // Limpiar campos
             txtNameProduct.Clear();
             txtPrice.Clear();
             cbCategory.SelectedIndex = -1;
@@ -376,19 +387,19 @@ namespace WpfTPV
 
         private void btncambiarImage_Click(object sender, RoutedEventArgs e)
         {
-            // Crear el diálogo para seleccionar archivos
+            
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                Title = "Seleccionar Imagen",
+                Title = "Seleccionar Nueva Imagen",
                 Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
             };
 
-            // Mostrar el diálogo y verificar si el usuario seleccionó un archivo
+          
             if (openFileDialog.ShowDialog() == true)
             {
                 try
                 {
-                    // Cargar la imagen seleccionada y mostrarla en el control Image
+                   
                     BitmapImage bitmap = new BitmapImage();
                     bitmap.BeginInit();
                     bitmap.UriSource = new Uri(openFileDialog.FileName);
@@ -413,14 +424,14 @@ namespace WpfTPV
             string precioTexto = txtNewPrice.Text.Trim().Replace(',','.');
             ComboBoxItem categoriaSeleccionada = (ComboBoxItem)cbCategoryModify.SelectedItem;
 
-            // Validaciones básicas
+       
             if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(nuevoNombre) || string.IsNullOrWhiteSpace(precioTexto) || categoriaSeleccionada == null)
             {
                 MessageBox.Show("Por favor, complete todos los campos.");
                 return;
             }
 
-            if (!double.TryParse(precioTexto, NumberStyles.Any, CultureInfo.InvariantCulture, out double precio))
+            if (!Double.TryParse(precioTexto, NumberStyles.Any, CultureInfo.InvariantCulture , out Double precio))
             {
                 MessageBox.Show("Por favor, ingrese un precio válido.");
                 return;
@@ -428,14 +439,14 @@ namespace WpfTPV
 
             int categoria = int.Parse(categoriaSeleccionada.Tag.ToString());
 
-            // Verificar si hay una imagen
+           
             if (string.IsNullOrEmpty(imageBase64))
             {
-                MessageBox.Show("Por favor, seleccione una imagen.");
-                return;
+                MessageBox.Show("Se recomienda añadir una imagen");
+                btncambiarImage_Click(sender, e);
             }
 
-            // Insertar en la base de datos
+          
             try
             {
                 Producto producto = pm.listProducto.FirstOrDefault(p => p.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase));
@@ -453,23 +464,19 @@ namespace WpfTPV
                 MessageBox.Show($"Error al modificar el producto: {ex.Message}");
             }
 
-            // Limpiar campos
+          
             txtActNameProduct.Clear();
             txtNewNameProduct.Clear();
             txtNewPrice.Clear();
             cbCategory.SelectedIndex = -1;
             ImagenCambio.Source = null;
             imageBase64 = string.Empty;
-
-
         }
-        #endregion
-
         private void btnDeleteProduct_Click(object sender, RoutedEventArgs e)
         {
             string nombre = txtDelNameProduct.Text;
             if (string.IsNullOrWhiteSpace(nombre))
-            { 
+            {
                 MessageBox.Show("Por favor, ingrese un nombre.");
                 return;
             }
@@ -487,5 +494,7 @@ namespace WpfTPV
             }
             txtDelNameProduct.Clear();
         }
+        #endregion
+
     }
 }
