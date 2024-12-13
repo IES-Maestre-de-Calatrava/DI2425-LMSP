@@ -30,12 +30,14 @@ namespace WpfTPV.View
         {
             TextBlock tbTicket = new TextBlock();
             double total = lista.Sum(p => p.Total);
-            string outStr = "";
+            string outStr = $"TICKET\n-----------------------------\n";
+        
+  
             foreach (Producto_Ticket pt in lista)
             {
-                outStr += "# Producto: " + pt.Producto.Nombre + ", Cantidad: " + pt.Unidades + ", Precio: " + pt.Producto.Precio + " €, Total: " + pt.Total + " €\n";
+                outStr += "# Producto: " + pt.Producto.Nombre + ", Uds: " + pt.Unidades + ", Precio: " + pt.Producto.Precio + " €, Total: " + pt.Total + " €\n";
             }
-            outStr += "\n" + "*************************************************************";
+            outStr += "\n*************************************************************";
             outStr += "************************\n************************-> TOTAL A PAGAR: " + total.ToString("F2") + " € <-************";
             tbTicket.Text = outStr;
             ticketGrid.Children.Add(tbTicket);
