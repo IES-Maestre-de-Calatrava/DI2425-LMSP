@@ -99,7 +99,7 @@
                     <TextBlock x:Name="TotalTextBlock" FontWeight="Bold" />
                 </StackPanel>
                 <Button x:Name="btnDelete" Margin="5" Grid.Column="2" Grid.Row="1" Content="Borrar" FontSize="12" FontFamily="Cascadia Code" Click="btnDelete_Click"/>
-                <Button x:Name="btnPay" Margin="5" Grid.Column="3" Grid.Row="1" Content="Pagar" FontSize="12" FontFamily="Cascadia Code" Height="26" VerticalAlignment="Top" Click="btnPay_Click"/>
+                <Button x:Name="btnPay" Margin="5" Grid.Column="3" Grid.Row="1" Content="Pagar" FontSize="12" FontFamily="Cascadia Code" Click="btnPay_Click"/>
             </Grid>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="0">
