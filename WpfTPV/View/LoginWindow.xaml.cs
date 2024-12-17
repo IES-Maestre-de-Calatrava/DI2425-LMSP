@@ -28,6 +28,7 @@ namespace WpfTPV.View
         {
             MainWindow mW = new MainWindow();
             mW.Show();
+            this.Close();
         }
     }
 }

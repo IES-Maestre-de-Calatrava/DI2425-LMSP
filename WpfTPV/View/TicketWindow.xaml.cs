@@ -40,8 +40,8 @@ namespace WpfTPV.View
             {
                 outStr += "#" + pt.Producto.Nombre + ", Uds: " + pt.Unidades + ", Precio: " + pt.Producto.Precio + " €, Total: " + pt.Total + " €\n";
             }
-            outStr += "\n*******************************************************************";
-            outStr += "\n************************-> TOTAL A PAGAR: " + total.ToString("C2") + " <-************";
+            outStr += "\n***********************************************";
+            outStr += "\n**********************-> TOTAL A PAGAR: " + total.ToString("C2");
             tbTicket.Text = outStr;
             ticketDescGrid.Children.Add(tbTicket);
         }
