@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38c6a272-0bb6-4a53-bbc0-5e470a683b76" name="Changes" comment="" />
+    <list default="true" id="38c6a272-0bb6-4a53-bbc0-5e470a683b76" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/WpfTPV/View/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/WpfTPV/View/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WpfTPV/View/TicketWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WpfTPV/View/TicketWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WpfTPV/model/mydb_categoria.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WpfTPV/model/mydb_producto.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WpfTPV/model/mydb_producto_ticket.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WpfTPV/model/mydb_ticket.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WpfTPV/model/tpv.mwb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WpfTPV/model/tpv.mwb.beforefix" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +22,12 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2qA3nZzJY5kMCBWwuCtKqYlKr3H" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,6 +40,7 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "Merging main",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
