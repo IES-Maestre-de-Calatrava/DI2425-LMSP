@@ -29,7 +29,7 @@ namespace WpfTPV.View
         private void mostrarTicket(List<Producto_Ticket> lista)
         { 
             TextBlock tbTicket = new TextBlock();
-            tbTicket.FontSize = 14;
+            tbTicket.FontSize = 12;
             tbTicket.FontFamily = new FontFamily("Courier New");
             tbTicket.Margin = new Thickness(10);
             double total = lista.Sum(p => p.Total);
@@ -40,7 +40,8 @@ namespace WpfTPV.View
             {
                 outStr += "#" + pt.Producto.Nombre + ", Uds: " + pt.Unidades + ", Precio: " + pt.Producto.Precio + " €, Total: " + pt.Total + " €\n";
             }
-            outStr += "\n***********************************************";
+            
+            outStr += "\n********************************************************";
             outStr += "\n**********************-> TOTAL A PAGAR: " + total.ToString("C2");
             tbTicket.Text = outStr;
             ticketDescGrid.Children.Add(tbTicket);

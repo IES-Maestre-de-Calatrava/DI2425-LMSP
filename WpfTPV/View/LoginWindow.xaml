@@ -25,10 +25,45 @@
                     <GradientStop Color="Coral" Offset="0.75"/>
                 </LinearGradientBrush>
             </Border.Background>
+            
             <Grid>
-                
-                <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="687,390,0,0" VerticalAlignment="Top" Click="btnLogin_Click"/>
 
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Background="Transparent">
+                    <Button x:Name="btnCerrar" Content="X" Background="Transparent" HorizontalAlignment="Left" Width="45" BorderBrush="Red" Click="btnCerrar_Click" Margin="617,4,0,-4"/>
+
+
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <StackPanel Width="250" Background="#7F000000" Margin="0,60,0,150">
+                        <TextBlock  Text="Username"  VerticalAlignment="Center" Background="Transparent" Foreground="White" FontWeight="Bold" Margin="12,40,10,0"/>
+                        <TextBox x:Name="tbUsername" VerticalAlignment="Center" BorderThickness="0,0,0,1" Padding="16,4,0,4" Foreground="White" BorderBrush="White" Margin="10,2,10,0">
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/sources/user-icon.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                            </TextBox.Background>
+                        </TextBox>
+
+                        <TextBlock Text="Password"  VerticalAlignment="Center" Background="Transparent" Foreground="White" FontWeight="Bold" Margin="12,20,10,0"/>
+                        <PasswordBox x:Name="tbPassword" VerticalAlignment="Center" BorderThickness="0,0,0,1" Padding="16,4,0,4" Foreground="White" BorderBrush="White" Margin="10,2,10,0">
+                            <PasswordBox.Background>
+                                <ImageBrush ImageSource="/sources/key-icon.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                            </PasswordBox.Background>
+                        </PasswordBox>
+                        <Button x:Name="btnIniciarSesion" Background="Transparent" HorizontalAlignment="Center" BorderBrush="Transparent" Click="btnLogin_Click">
+                            <Image Source="/sources/iniciasess.png" Width="50" Margin="0,10,0,0"/>
+                        </Button>
+                    </StackPanel>
+
+                </Grid>
             </Grid>
         </Border>
     </Border>
