@@ -1,13 +1,8 @@
-﻿using ExampleMVCnoDatabase.Persistence;
-using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using DataGridPersonas.persistence;
+using WpfTPV.Domain;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TPV.modelo;
 
-namespace TPV.persistencia
+namespace WpfTPV.Persistence.Manage
 {
     internal class UsuariosManage
     {
@@ -21,8 +16,8 @@ namespace TPV.persistencia
         public static Usuario encontrarUsuario(String nombre)
         {
 
-            Usuario usuario = DBBroker.obtenerAgente().leerUsuario($"Select * from mydb.usuario WHERE NOMBREUSUARIO='{nombre}';"); ;
 
+            Usuario usuario = DBBroker.ObtenerAgente().LeerUsuario($"Select * from mydb.usuario WHERE NOMBREUSUARIO='{nombre}';");
             return usuario;
         }
 

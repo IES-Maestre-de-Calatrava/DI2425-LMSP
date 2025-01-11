@@ -1,0 +1,17 @@
+{
+    "people": [
+        {
+            "idpeople": 1,
+            "name": "John Doe",
+            "surName": "Doe",
+            "age": 30
+        },
+        {
+            "idpeople": 2,
+            "name": "Jane Doe",
+            "surName": "Doe",
+            "age": 25
+        }
+    ]
+
+}

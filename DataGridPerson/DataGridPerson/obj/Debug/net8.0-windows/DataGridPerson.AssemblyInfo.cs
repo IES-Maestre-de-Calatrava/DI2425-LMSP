@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DataGridPerson")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa5092030325e2ee2622dca52f5c7f698f7e24e5")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22021ebca026274c2bb251deb556e8f7d030f414")]
->>>>>>> fe0fc2112ecec642fd8f59bfd8226597546f9c34
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ae44c53ccedc1cae71aa6ad36564408415bf4c9")]
 [assembly: System.Reflection.AssemblyProductAttribute("DataGridPerson")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DataGridPerson")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
