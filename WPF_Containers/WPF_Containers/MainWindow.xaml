@@ -1,0 +1,75 @@
+﻿<Window x:Class="WPF_Containers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Containers"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header con DockPanel -->
+        <DockPanel LastChildFill="False" Background="LightGray" Grid.Row="0">
+            <Button Content="Left" DockPanel.Dock="Left" Width="100"/>
+            <Button Content="Right" DockPanel.Dock="Right" Width="100"/>
+            <TextBlock Text="Header" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </DockPanel>
+
+        <!-- Main Content con Grid -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- StackPanel en la primera columna -->
+            <StackPanel Grid.Column="0" Background="LightBlue">
+                <TextBlock Text="StackPanel Example" FontWeight="Bold" Margin="5"/>
+                <Button Content="Button 1" Margin="5"/>
+                <Button Content="Button 2" Margin="5"/>
+                <Button Content="Button 3" Margin="5"/>
+            </StackPanel>
+
+            <!-- Canvas en la segunda columna -->
+            <Canvas Grid.Column="1" Background="Beige">
+                <TextBlock Text="Canvas Example" Canvas.Left="50" Canvas.Top="20" FontWeight="Bold"/>
+                <Ellipse Canvas.Left="100" Canvas.Top="50" Width="100" Height="100" Fill="Red"/>
+                <Rectangle Canvas.Left="50" Canvas.Top="200" Width="100" Height="50" Fill="Green"/>
+            </Canvas>
+        </Grid>
+
+        <!-- Footer con WrapPanel y UniformGrid -->
+        <DockPanel Grid.Row="2" Background="LightGray">
+            <!-- WrapPanel para botones -->
+            <WrapPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                <Button Content="Button 1" Width="100" Margin="5"/>
+                <Button Content="Button 2" Width="100" Margin="5"/>
+                <Button Content="Button 3" Width="100" Margin="5"/>
+                <Button Content="Button 4" Width="100" Margin="5"/>
+            </WrapPanel>
+
+            <!-- UniformGrid para botones de igual tamaño -->
+            <UniformGrid DockPanel.Dock="Bottom" Rows="2" Columns="2" Margin="10">
+                <Button Content="Grid 1"/>
+                <Button Content="Grid 2"/>
+                <Button Content="Grid 3"/>
+                <Button Content="Grid 4"/>
+            </UniformGrid>
+        </DockPanel>
+
+        <!-- Expander en la esquina inferior derecha -->
+        <Expander Header="Viewbox Example" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="200">
+            <Viewbox>
+                <TextBlock Text="This text scales!" FontSize="20"/>
+            </Viewbox>
+        </Expander>
+    </Grid>
+    
+</Window>
+
