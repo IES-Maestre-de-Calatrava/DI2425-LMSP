@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HarryPotterGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a5723a09112b5c0943afe4c1c478598861446fd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+11f792cbac3f76901dd591efb2bc07fca58e9795")]
 [assembly: System.Reflection.AssemblyProductAttribute("HarryPotterGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HarryPotterGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

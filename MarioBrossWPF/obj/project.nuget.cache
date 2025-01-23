@@ -1,14 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "aXWR27ZOKUI=",
+  "dgSpecHash": "yMWnGS5Jzxc=",
   "success": true,
   "projectFilePath": "C:\\Users\\b15-04m\\Desktop\\DI\\DI2425-LMSP\\MarioBrossWPF\\MarioBrossWPF.csproj",
-=======
-  "dgSpecHash": "AEuYaFL+lho=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\DAM2\\DI\\DI2425-LMSP\\MarioBrossWPF\\MarioBrossWPF.csproj",
->>>>>>> 22021ebca026274c2bb251deb556e8f7d030f414
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\b15-04m\\Desktop\\DI\\DI2425-LMSP\\MarioBrossWPF\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
