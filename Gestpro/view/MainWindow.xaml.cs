@@ -1,6 +1,7 @@
 ﻿using Gestpro.Dominio;
 using Gestpro.persistence.manages;
 using System;
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,13 +21,19 @@ namespace Gestpro
     public partial class MainWindow : Window
     {
         private List<Proyectos> listProject;
+        private List<User> listUser;
+        private List<Employ> listEmployees;
         public MainWindow()
         {
             InitializeComponent();
             listProject = new List<Proyectos>();
+            listUser = new List<User>();
+            listEmployees = new List<Employ>();
             dataProject.ItemsSource = listProject;
+            dataUser.ItemsSource = listUser;
+            dataEmploy.ItemsSource = listEmployees;
         }
-
+        #region Eventos Proyectos
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             
@@ -36,8 +43,11 @@ namespace Gestpro
                 }
                 else
                 {
-                    listProject.Add(new Proyectos(tbCodProy.Text,tbNombre.Text,tbFechaInicio.Text,tbFechaFin.Text));
+                    Proyectos proyectos = new Proyectos(tbCodProy.Text, tbNombre.Text, tbFechaInicio.Text, tbFechaFin.Text);
+                    listProject.Add(proyectos);
                     dataProject.Items.Refresh();
+                    ProjectManage pm = new ProjectManage();
+                    pm.insertProject(proyectos);
                     tbCodProy.Text = string.Empty;
                     tbNombre.Text = string.Empty;
                     tbFechaInicio.Text = string.Empty;
@@ -55,7 +65,7 @@ namespace Gestpro
                 
                     if (tbNombre.Text.Equals(string.Empty) || tbFechaInicio.Text.Equals(string.Empty)|| tbFechaFin.Text.Equals(string.Empty))
                     {
-                        // Mostrar un mensaje de error al usuario
+                        // Mostrar un mensaje de error al user
                         MessageBox.Show("Ningun campo puede estar vacio.", "Error");
                     }
                     else
@@ -96,7 +106,7 @@ namespace Gestpro
             }
             else
             {
-                // Mostrar un mensaje de error al usuario
+                // Mostrar un mensaje de error al user
                 MessageBox.Show("Por favor, seleccione un proyecto", "Error");
             }
         }
@@ -135,5 +145,140 @@ namespace Gestpro
             }
 
         }
+        #endregion
+        #region Soluciones y eventos para Usuario
+        private void btnDarAlta_Click(object sender, RoutedEventArgs e)
+        {
+            String username = tbUsername.Text.ToString();
+            String password = tbPass.Password.ToString();
+            if (tbUsername.Text.Equals(string.Empty) || tbPass.Password.Equals(string.Empty))
+            {
+                MessageBox.Show("Ningun campo puede estar vacio.", "Error");
+            }
+            else
+            {
+                String passwordSHA = cifraSHA(password);
+
+                User user = new User(username, passwordSHA);
+                listUser.Add(user);
+                dataUser.Items.Refresh();
+                UserManage um = new UserManage();
+                um.insertUser(user);
+                tbUsername.Text = string.Empty;
+                tbPass.Password = string.Empty;
+            }
+            
+
+           
+        }
+        private static String cifraSHA(String cadena)
+        {
+            using (SHA512 sha512 = SHA512.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(cadena);
+
+                // Sacar hash
+                byte[] hash_bytes = sha512.ComputeHash(bytes);
+
+                //Pasar hexadecimal
+                StringBuilder sb = new StringBuilder();
+                foreach (byte b in hash_bytes)
+                {
+                    sb.Append(b.ToString("x2"));//Para hacerlo Hexadecimal
+                }
+
+                return sb.ToString();
+
+            }
+        }
+        private void dataUser_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (dataUser.SelectedItem != null)
+            {
+                User u = (User)dataUser.SelectedItem;
+                tbUsername.Text = u.Username;
+               
+            }
+            
+        }
+
+        private void btnDeleteUser_Click(object sender, RoutedEventArgs e)
+        {
+            if (dataUser.SelectedItem != null)
+            {
+                UserManage um = new UserManage();
+                User u = (User)dataUser.SelectedItem;
+                um.deleteUser(u);
+                listUser.Remove(u);
+                dataUser.Items.Refresh();
+
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un usuario", "Error");
+            }
+        }
+
+        private void btnUpdatePass_Click(object sender, RoutedEventArgs e)
+        {
+            if (dataUser.SelectedItem != null)
+            {
+                String newPass = cifraSHA(tbPass.Password.ToString());
+                UserManage um = new UserManage();
+                User u = (User)dataUser.SelectedItem;
+                listUser.Remove(u);
+                u.Password = newPass;
+                um.updatePass(u);
+                listUser.Add(u);
+                dataUser.Items.Refresh();
+
+            }
+           
+        }
+        #endregion
+
+        #region Soluciones y eventos para Empleado
+        private void btnAddEmploy_Click(object sender, RoutedEventArgs e)
+        {
+            String name = tbNameEm.Text.ToString();
+            String surname = tbSurnameEm.Text.ToString();
+            int rol = cbRol.SelectedIndex + 1;
+            double csr = Double.Parse(tbCSR.Text.ToString()); 
+            if (tbNameEm.Text.Equals(string.Empty) || tbSurnameEm.Text.Equals(string.Empty))
+            {
+                MessageBox.Show("Ningun campo puede estar vacio.", "Error");
+            }
+            else
+            {
+                Employ empleado = new Employ(name,surname,rol,csr);
+                listEmployees.Add(empleado);
+                dataEmploy.Items.Refresh();
+                EmployManage em = new EmployManage();
+                em.insertEmploy(empleado);
+                tbNameEm.Text = string.Empty;
+                tbSurnameEm.Text = string.Empty;
+                cbRol.SelectedIndex = -1;
+                tbCSR.Text = string.Empty;
+            }
+        }
+
+        private void btnModifyEmploy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDeleteEmloy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void dataEmploy_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+
+        #endregion
+
+
     }
 }
