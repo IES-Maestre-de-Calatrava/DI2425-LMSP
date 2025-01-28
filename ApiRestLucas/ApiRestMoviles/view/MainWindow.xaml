@@ -1,0 +1,28 @@
+﻿<Window x:Class="ApiRestLucas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ApiRestLucas"
+        mc:Ignorable="d"
+        Title="Api Rest" Height="500" Width="600" WindowStartupLocation="CenterScreen" Background="AliceBlue">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Button x:Name="btnCargar" Content="Load data" Width="90" Margin="10 20 40 20" Click="btnCargar_Click"/>
+            <Button x:Name="btnAdd" Content="Add object"  Width="90" Margin="20 20 40 20" Click="btnAdd_Click"/>
+            <Button x:Name="btnCargarId" Content="Load data by ID"  Width="90" Margin=" 20 20 40 20" Click="btnCargarId_Click"/>
+            <Button x:Name="btnDelet" Content="Delete object"  Width="90" Margin="20 20 10 20" Click="btnDelet_Click"/>
+        </StackPanel>
+
+        <ListBox x:Name="listDatos" Grid.Row="1" Margin="20"/>
+
+        <TextBox x:Name="txtPost" Text="The results appear here" Grid.Row="2" Height="100" Margin="20" HorizontalScrollBarVisibility="Auto"/>
+
+    </Grid>
+</Window>
