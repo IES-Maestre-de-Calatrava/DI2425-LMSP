@@ -115,7 +115,21 @@
             
             </TabItem>
             <TabItem Header="G.ECONÓMICA" IsSelected="True" IsEnabled="False"/>
-            <TabItem Header="ESTADISTICAS" IsSelected="True" IsEnabled="False"/>
+            <TabItem Header="ESTADISTICAS" IsSelected="True">
+                <Grid x:Name="contenedorCrystal">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ComboBox Name="comboReports" Margin="50,5" Width="230" HorizontalAlignment="Left">
+                        <ComboBoxItem Content="Coste por proyecto" Tag="1"/>
+                        <ComboBoxItem Content="Número de perfiles por proyecto" Tag="2"/>
+                    </ComboBox>
+                    <Button x:Name="btnShowReport" Grid.Row="0" Content="Mostrar Informe" Margin="200,5,0,5" Width="150" IsEnabled="False" Click="btnShowReport_Click"/>
+                    
+
+                </Grid>
+            </TabItem>
             <TabItem Header="USUARIOS" IsSelected="True">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -152,6 +166,7 @@
                     <Image Source="/Sources/palm_3086199.png" Grid.Column="1" HorizontalAlignment="Right" Margin="8,8"/>
                 </Grid>
             </TabItem>
+            <CheckBox Content="CheckBox"/>
         </TabControl>
         <TextBlock TextWrapping="Wrap" Text="GESTPRO" Width="800" Height="45" Margin="0,10,0,379" TextAlignment="Center"/>
 

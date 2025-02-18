@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetCostByProject" targetNamespace="http://tempuri.org/DataSetCostByProject.xsd" xmlns:mstns="http://tempuri.org/DataSetCostByProject.xsd" xmlns="http://tempuri.org/DataSetCostByProject.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetCostByProject" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSetCostByProject" msprop:Generator_DataSetName="DataSetCostByProject">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CostsByProject" msprop:Generator_RowEvHandlerName="CostsByProjectRowChangeEventHandler" msprop:Generator_RowDeletedName="CostsByProjectRowDeleted" msprop:Generator_RowDeletingName="CostsByProjectRowDeleting" msprop:Generator_RowEvArgName="CostsByProjectRowChangeEvent" msprop:Generator_TablePropName="CostsByProject" msprop:Generator_RowChangedName="CostsByProjectRowChanged" msprop:Generator_RowChangingName="CostsByProjectRowChanging" msprop:Generator_TableClassName="CostsByProjectDataTable" msprop:Generator_RowClassName="CostsByProjectRow" msprop:Generator_TableVarName="tableCostsByProject" msprop:Generator_UserTableName="CostsByProject">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Project" msprop:Generator_ColumnPropNameInRow="Project" msprop:Generator_ColumnPropNameInTable="ProjectColumn" msprop:Generator_ColumnVarNameInTable="columnProject" msprop:Generator_UserColumnName="Project" type="xs:string" minOccurs="0" />
+              <xs:element name="Month_x002F_Year" msprop:Generator_ColumnPropNameInRow="_Month_Year" msprop:Generator_ColumnPropNameInTable="_Month_YearColumn" msprop:Generator_ColumnVarNameInTable="_columnMonth_Year" msprop:Generator_UserColumnName="Month/Year" type="xs:string" minOccurs="0" />
+              <xs:element name="Total_x0020_Cost_x0020__x0028_CSR_x0020_x_x0020_Hours_x0029_" msprop:Generator_ColumnPropNameInRow="_Total_Cost__CSR_x_Hours_" msprop:Generator_ColumnPropNameInTable="_Total_Cost__CSR_x_Hours_Column" msprop:Generator_ColumnVarNameInTable="_columnTotal_Cost__CSR_x_Hours_" msprop:Generator_UserColumnName="Total Cost (CSR x Hours)" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

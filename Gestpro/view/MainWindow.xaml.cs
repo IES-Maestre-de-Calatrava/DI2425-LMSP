@@ -18,11 +18,25 @@ namespace Gestpro
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// <seealso cref="System.Windows.Window" />
+    /// <seealso cref="System.Windows.Markup.IComponentConnector" />
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// The list project
+        /// </summary>
         private List<Proyectos> listProject;
+        /// <summary>
+        /// The list user
+        /// </summary>
         private List<User> listUser;
+        /// <summary>
+        /// The list employees
+        /// </summary>
         private List<Employ> listEmployees;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainWindow" /> class.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -34,6 +48,11 @@ namespace Gestpro
             dataEmploy.ItemsSource = listEmployees;
         }
         #region Eventos Proyectos
+        /// <summary>
+        /// Handles the Click event of the btnAdd control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             
@@ -56,6 +75,11 @@ namespace Gestpro
             
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnModify control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnModify_Click(object sender, RoutedEventArgs e)
         {
             ProjectManage pm = new ProjectManage();
@@ -93,6 +117,11 @@ namespace Gestpro
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnDelete control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             ProjectManage pm = new ProjectManage();
@@ -111,6 +140,11 @@ namespace Gestpro
             }
         }
 
+        /// <summary>
+        /// Handles the SelectionChanged event of the dataProject control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs"/> instance containing the event data.</param>
         private void dataProject_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (dataProject.SelectedItem != null)
@@ -130,6 +164,11 @@ namespace Gestpro
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the CargarDatos control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void CargarDatos_Click(object sender, RoutedEventArgs e)
         {
             ProjectManage pm = new ProjectManage();
@@ -147,6 +186,11 @@ namespace Gestpro
         }
         #endregion
         #region Soluciones y eventos para Usuario
+        /// <summary>
+        /// Handles the Click event of the btnDarAlta control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnDarAlta_Click(object sender, RoutedEventArgs e)
         {
             String username = tbUsername.Text.ToString();
@@ -171,6 +215,11 @@ namespace Gestpro
 
            
         }
+        /// <summary>
+        /// Cifras the sha.
+        /// </summary>
+        /// <param name="cadena">The cadena.</param>
+        /// <returns></returns>
         private static String cifraSHA(String cadena)
         {
             using (SHA512 sha512 = SHA512.Create())
@@ -191,6 +240,11 @@ namespace Gestpro
 
             }
         }
+        /// <summary>
+        /// Handles the SelectionChanged event of the dataUser control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs"/> instance containing the event data.</param>
         private void dataUser_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (dataUser.SelectedItem != null)
@@ -202,6 +256,11 @@ namespace Gestpro
             
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnDeleteUser control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnDeleteUser_Click(object sender, RoutedEventArgs e)
         {
             if (dataUser.SelectedItem != null)
@@ -219,6 +278,11 @@ namespace Gestpro
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnUpdatePass control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnUpdatePass_Click(object sender, RoutedEventArgs e)
         {
             if (dataUser.SelectedItem != null)
@@ -238,6 +302,11 @@ namespace Gestpro
         #endregion
 
         #region Soluciones y eventos para Empleado
+        /// <summary>
+        /// Handles the Click event of the btnAddEmploy control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnAddEmploy_Click(object sender, RoutedEventArgs e)
         {
             String name = tbNameEm.Text.ToString();
@@ -262,23 +331,42 @@ namespace Gestpro
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnModifyEmploy control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnModifyEmploy_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnDeleteEmloy control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnDeleteEmloy_Click(object sender, RoutedEventArgs e)
         {
 
         }
+        /// <summary>
+        /// Handles the SelectionChanged event of the dataEmploy control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs"/> instance containing the event data.</param>
         private void dataEmploy_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
 
+
         #endregion
 
+        private void btnShowReport_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }

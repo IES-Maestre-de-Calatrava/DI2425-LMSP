@@ -1,0 +1,178 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestPro2"
+        xmlns:Viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer" x:Class="Gestpro.MainWindow"
+        mc:Ignorable="d"
+        Title="Gestpro" Height="450" Width="800"
+        Background="#FFEBECDE" UseLayoutRounding="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lblTituloGestPro" Content="GESTPRO" Grid.Row="0" FontFamily="Arial Bold" FontSize="16"
+            HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF50345B"
+            Foreground="WhiteSmoke"/>
+        <TabControl TabStripPlacement="Left" Grid.Row="1">
+            <TabItem Header="INICIO" IsSelected="True">
+                <Grid Background="#FFEBECDE">
+
+                    <Button Content="PROYECTOS" Margin="10,96,576,240"/>
+
+
+                    <Button Content="ESTADÍSTICAS" Margin="162,96,425,240"/>
+                    <Button Content="EMPLEADOS" Margin="10,162,576,173"/>
+                    <Button Content="USUARIOS" Margin="162,162,425,174"/>
+                    <Button Content="G.ECONÓMICA" Margin="10,226,577,110"/>
+                    <Image Source="../Sources/palm_3086199.png"  HorizontalAlignment="Left" Height="134" Margin="382,133,0,0" VerticalAlignment="Top" Width="148" RenderTransformOrigin="-0.263,0.298" Visibility="Visible"/>
+                    <Image Source="../Sources/logotipo.png" HorizontalAlignment="Left" Height="117" Margin="499,305,0,0" VerticalAlignment="Top" Width="165" Visibility="Visible"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="PROYECTO" IsSelected="True">
+                <Grid>
+
+                    <Label Content="Código Proyecto" HorizontalAlignment="Left" Margin="534,68,0,0" VerticalAlignment="Top" Height="33" Width="128" RenderTransformOrigin="0.524,-0.374"/>
+                    <Label Content="Nombre" HorizontalAlignment="Left" Margin="534,126,0,0" VerticalAlignment="Top" Height="33" Width="128" RenderTransformOrigin="0.524,-0.374"/>
+                    <Label Content="Fecha Inicio" HorizontalAlignment="Left" Margin="534,197,0,0" VerticalAlignment="Top" Height="33" Width="128" RenderTransformOrigin="0.524,-0.374"/>
+                    <Label Content="Fecha Fin" HorizontalAlignment="Left" Margin="534,267,0,0" VerticalAlignment="Top" Height="33" Width="128" RenderTransformOrigin="0.524,-0.374"/>
+                    <Button x:Name="btnAdd" Content="Añadir" HorizontalAlignment="Left" Margin="406,340,0,0" VerticalAlignment="Top" Height="20" Width="85" Click="btnAdd_Click"/>
+                    <Button x:Name="btnModify" Content="Modificar" HorizontalAlignment="Left" Margin="493,340,0,0" VerticalAlignment="Top" Height="20" Width="85" Click="btnModify_Click"/>
+                    <Button x:Name="btnDelete" Content="Eliminar" HorizontalAlignment="Left" Margin="579,340,0,0" VerticalAlignment="Top" Height="20" Width="85" Click="btnDelete_Click"/>
+
+                    <TextBox x:Name="tbCodProy" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Margin="536,98,48,243" Height="23"/>
+                    <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Margin="537,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Height="23"/>
+                    <TextBox x:Name="tbFechaInicio" HorizontalAlignment="Left" Margin="537,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Height="23"/>
+                    <TextBox x:Name="tbFechaFin" HorizontalAlignment="Left" Margin="537,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Height="23"/>
+                    <Image x:Name="hoja" Source="/Sources/palm_3086199.png" HorizontalAlignment="Left" Height="38" Margin="636,25,0,0" VerticalAlignment="Top" Width="84" Visibility="Visible"/>
+                    <Image x:Name="logo" Source="/Sources/logotipo.png" HorizontalAlignment="Left" Height="130" Margin="10,311,0,0" VerticalAlignment="Top" Width="157" Visibility="Visible"/>
+                    <TextBox HorizontalAlignment="Left" Margin="45,63,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="328" Height="38"/>
+                    <DataGrid AutoGenerateColumns="false" Margin="63,112,350,100" x:Name="dataProject" SelectionChanged="dataProject_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Código Proyecto" Binding="{Binding CodProy}" />
+                            <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>
+                            <DataGridTextColumn Header="Fecha Inicio" Binding="{Binding FechaInicio}"/>
+                            <DataGridTextColumn Header="Fecha Fin" Binding="{Binding FechaFin}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="CargarDatos" Content="CARGAR DATOS(SIMULAR PROYECTOS)" HorizontalAlignment="Left" Margin="378,25,0,0" VerticalAlignment="Top" Height="43" Width="244" Click="CargarDatos_Click"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="EMPLEADOS" IsSelected="True" Height="20" VerticalAlignment="Bottom">
+                <Grid ShowGridLines="True">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <DataGrid x:Name="dataEmploy" Grid.Row="1" Grid.Column="0" Margin="30,10" AutoGenerateColumns="False" CanUserAddRows="False"
+                  CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False"
+                  CanUserSortColumns="False" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow"
+                  FontSize="12" FontFamily="Cascadia Code" SelectionChanged="dataEmploy_SelectionChanged" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Nombre" Binding="{Binding Name}" />
+                            <DataGridTextColumn Header="Apellidos" Binding="{Binding SurName}" />
+                            <DataGridTextColumn Header="ROL" Binding="{Binding Rol}" />
+                            <DataGridTextColumn Header="CSR" Binding="{Binding CSR}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
+                        <Button x:Name="btnAddEmploy" Content="Añadir" Margin="25,0" Width="100" Click="btnAddEmploy_Click"  />
+                        <Button x:Name="btnModifyEmploy" Content="Modificar" Width="100" Click="btnModifyEmploy_Click" />
+                        <Button x:Name="btnDeleteEmloy" Content="Eliminar" Width="100" Margin="25,0" Click="btnDeleteEmloy_Click" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="1">
+                        <TextBlock Text="Nombre" Margin="80,0"/>
+                        <TextBox x:Name="tbNameEm" Margin="20,2" Height="25"/>
+                        <TextBlock Text="Apellidos" Margin="80,0"/>
+                        <TextBox x:Name="tbSurnameEm" Margin="20,2" Height="25"/>
+                        <TextBlock Text="Rol" Margin="80,0"/>
+                        <ComboBox Margin="20,2" x:Name="cbRol">
+                            <ComboBoxItem Content="Programador Junior" Tag="1"/>
+                            <ComboBoxItem Content="Programador" Tag="2"/>
+                            <ComboBoxItem Content="Programador Senior" Tag="3"/>
+                            <ComboBoxItem Content="Jefe de proyecto" Tag="4"/>
+                        </ComboBox>
+                        <TextBlock Text="CSR" Margin="80,0"/>
+                        <TextBox x:Name="tbCSR" Margin="20,2" Height="25"/>
+
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center">
+                        <RadioButton x:Name="radioSi" Height="20" Content="Usuario ya registrado"/>
+                        <RadioButton x:Name="radioNo" Height="20" Content="Usuario no registrado"/>
+                    </StackPanel>
+                    <Image Source="/Sources/logotipo.png" Grid.Column="0" Grid.Row="3" Height="35" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+                    <Image Source="/Sources/palm_3086199.png" Grid.Column="1" HorizontalAlignment="Right" Margin="8,8"/>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="G.ECONÓMICA" IsSelected="True" IsEnabled="False"/>
+            <TabItem Header="ESTADISTICAS" IsSelected="True">
+                <Grid x:Name="contenedorCrystal">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ComboBox x:Name="comboReports" Margin="50,5" Width="230" HorizontalAlignment="Left" SelectionChanged="comboReports_SelectionChanged">
+                        <ComboBoxItem Content="Coste por proyecto" Tag="1"/>
+                        <ComboBoxItem Content="Número de perfiles por proyecto" Tag="2"/>
+                    </ComboBox>
+                    <Button x:Name="btnShowReport" Grid.Row="0" Content="Mostrar Informe" Margin="200,5,0,5" Width="150" IsEnabled="False" Click="btnShowReport_Click"/>
+
+
+                    <Viewer:CrystalReportsViewer   Grid.Row="1" x:Name="Visor"/>
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="USUARIOS" IsSelected="True">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <DataGrid x:Name="dataUser" Grid.Row="1" Grid.Column="0" Margin="30,10" AutoGenerateColumns="False" CanUserAddRows="False"
+                              CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False"
+                              CanUserSortColumns="False" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow"
+                              FontSize="12" FontFamily="Cascadia Code" SelectionChanged="dataUser_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Usuario" Binding="{Binding Username}" />
+                            <DataGridTextColumn Header="Password encriptada" Binding="{Binding Password}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
+                        <Button x:Name="btnDarAlta" Content="Dar de alta" Margin="25,0" Width="100" Click="btnDarAlta_Click"/>
+                        <Button x:Name="btnDeleteUser" Content="Eliminar" Width="100" Click="btnDeleteUser_Click"/>
+                        <Button x:Name="btnUpdatePass" Content="Actualizar contraseña" Margin="25,0" Click="btnUpdatePass_Click"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="1">
+                        <TextBlock Text="Usuario" Margin="80,30,0,0"/>
+                        <TextBox x:Name="tbUsername" Margin="20,8" Height="25"/>
+                        <TextBlock Text="Password" Margin="80,0,0,0"/>
+                        <PasswordBox x:Name="tbPass" Margin="20,8" Height="25"/>
+                    </StackPanel>
+                    <Image Source="/Sources/logotipo.png" Grid.Column="0" Grid.Row="3" Height="35" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+                    <Image Source="/Sources/palm_3086199.png" Grid.Column="1" HorizontalAlignment="Right" Margin="8,8"/>
+                </Grid>
+            </TabItem>
+            <CheckBox Content="CheckBox"/>
+        </TabControl>
+        <TextBlock TextWrapping="Wrap" Text="GESTPRO" Width="800" Height="45" Margin="0,10,0,379" TextAlignment="Center"/>
+
+    </Grid>
+</Window>

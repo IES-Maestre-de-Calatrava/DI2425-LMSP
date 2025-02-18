@@ -15,6 +15,108 @@
           }
         }
       },
+      "CrystalDecisions.CrystalReports/13.0.25.3158": {
+        "type": "package",
+        "compile": {
+          "lib/CrystalDecisions.CrystalReports.Engine.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.ClientDoc.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.CommLayer.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.CommonControls.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.CommonObjectModel.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.Controllers.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.CubeDefModel.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.DataDefModel.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.DataSetConversion.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.ObjectFactory.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.Prompting.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.ReportDefModel.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.XmlSerialize.dll": {},
+          "lib/CrystalDecisions.ReportSource.dll": {},
+          "lib/CrystalDecisions.Shared.dll": {},
+          "lib/SAPBusinessObjects.WPF.Viewer.dll": {},
+          "lib/SAPBusinessObjects.WPF.ViewerShared.dll": {}
+        },
+        "runtime": {
+          "lib/CrystalDecisions.CrystalReports.Engine.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.ClientDoc.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.CommLayer.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.CommonControls.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.CommonObjectModel.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.Controllers.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.CubeDefModel.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.DataDefModel.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.DataSetConversion.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.ObjectFactory.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.Prompting.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.ReportDefModel.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.XmlSerialize.dll": {},
+          "lib/CrystalDecisions.ReportSource.dll": {},
+          "lib/CrystalDecisions.Shared.dll": {},
+          "lib/SAPBusinessObjects.WPF.Viewer.dll": {},
+          "lib/SAPBusinessObjects.WPF.ViewerShared.dll": {}
+        }
+      },
+      "CrystalDecisions.CrystalReports.Engine/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/CrystalDecisions.CrystalReports.Engine.dll": {}
+        },
+        "runtime": {
+          "lib/CrystalDecisions.CrystalReports.Engine.dll": {}
+        }
+      },
+      "CrystalDecisions.ReportAppServer.Shared/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/CrystalDecisions.ReportAppServer.CommLayer.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.CommonControls.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.CommonObjectModel.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.CubeDefModel.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.DataSetConversion.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.ObjectFactory.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.Prompting.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.ReportDefModel.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.XmlSerialize.dll": {}
+        },
+        "runtime": {
+          "lib/CrystalDecisions.ReportAppServer.CommLayer.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.CommonControls.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.CommonObjectModel.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.CubeDefModel.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.DataSetConversion.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.ObjectFactory.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.Prompting.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.ReportDefModel.dll": {},
+          "lib/CrystalDecisions.ReportAppServer.XmlSerialize.dll": {}
+        }
+      },
+      "CrystalDecisions.ReportSource/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/CrystalDecisions.ReportSource.dll": {}
+        },
+        "runtime": {
+          "lib/CrystalDecisions.ReportSource.dll": {}
+        }
+      },
+      "CrystalDecisions.Shared/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/CrystalDecisions.Shared.dll": {}
+        },
+        "runtime": {
+          "lib/CrystalDecisions.Shared.dll": {}
+        }
+      },
+      "CrystalDecisions.Windows.Forms/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/CrystalDecisions.Windows.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/CrystalDecisions.Windows.Forms.dll": {}
+        }
+      },
       "Google.Protobuf/3.26.1": {
         "type": "package",
         "compile": {
@@ -496,6 +598,102 @@
         "lib/netstandard2.0/BouncyCastle.Cryptography.dll",
         "lib/netstandard2.0/BouncyCastle.Cryptography.xml",
         "packageIcon.png"
+      ]
+    },
+    "CrystalDecisions.CrystalReports/13.0.25.3158": {
+      "sha512": "i1FIlTi+y68hS++nblFyEfpOVL5ok/xDjLiy/7SllfpyUUbhXRN/oh1higofB+hUCLFwOVRlFRw/NRgkSdqInw==",
+      "type": "package",
+      "path": "crystaldecisions.crystalreports/13.0.25.3158",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "crystaldecisions.crystalreports.13.0.25.3158.nupkg.sha512",
+        "crystaldecisions.crystalreports.nuspec",
+        "lib/CrystalDecisions.CrystalReports.Engine.dll",
+        "lib/CrystalDecisions.ReportAppServer.ClientDoc.dll",
+        "lib/CrystalDecisions.ReportAppServer.CommLayer.dll",
+        "lib/CrystalDecisions.ReportAppServer.CommonControls.dll",
+        "lib/CrystalDecisions.ReportAppServer.CommonObjectModel.dll",
+        "lib/CrystalDecisions.ReportAppServer.Controllers.dll",
+        "lib/CrystalDecisions.ReportAppServer.CubeDefModel.dll",
+        "lib/CrystalDecisions.ReportAppServer.DataDefModel.dll",
+        "lib/CrystalDecisions.ReportAppServer.DataSetConversion.dll",
+        "lib/CrystalDecisions.ReportAppServer.ObjectFactory.dll",
+        "lib/CrystalDecisions.ReportAppServer.Prompting.dll",
+        "lib/CrystalDecisions.ReportAppServer.ReportDefModel.dll",
+        "lib/CrystalDecisions.ReportAppServer.XmlSerialize.dll",
+        "lib/CrystalDecisions.ReportSource.dll",
+        "lib/CrystalDecisions.Shared.dll",
+        "lib/SAPBusinessObjects.WPF.Viewer.dll",
+        "lib/SAPBusinessObjects.WPF.ViewerShared.dll"
+      ]
+    },
+    "CrystalDecisions.CrystalReports.Engine/1.0.0": {
+      "sha512": "qr+XgfiEvAWXModuJy4IamWlkarFNL6c2ueA9PcZkLUkoz17L0rptDNzLzJkFaSP8hh+nAwfD2t3wvRLdbjFQw==",
+      "type": "package",
+      "path": "crystaldecisions.crystalreports.engine/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "crystaldecisions.crystalreports.engine.1.0.0.nupkg.sha512",
+        "crystaldecisions.crystalreports.engine.nuspec",
+        "lib/CrystalDecisions.CrystalReports.Engine.dll"
+      ]
+    },
+    "CrystalDecisions.ReportAppServer.Shared/1.0.0": {
+      "sha512": "Fsd5vP804rFLkqLA/vxjsUriOKQJVAcYGY1Tws/Tybru2xEJcVrsdh0kBNwZbjldPxI1tVF+ZOKctBBVZzESCQ==",
+      "type": "package",
+      "path": "crystaldecisions.reportappserver.shared/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "crystaldecisions.reportappserver.shared.1.0.0.nupkg.sha512",
+        "crystaldecisions.reportappserver.shared.nuspec",
+        "lib/CrystalDecisions.ReportAppServer.CommLayer.dll",
+        "lib/CrystalDecisions.ReportAppServer.CommonControls.dll",
+        "lib/CrystalDecisions.ReportAppServer.CommonObjectModel.dll",
+        "lib/CrystalDecisions.ReportAppServer.CubeDefModel.dll",
+        "lib/CrystalDecisions.ReportAppServer.DataSetConversion.dll",
+        "lib/CrystalDecisions.ReportAppServer.ObjectFactory.dll",
+        "lib/CrystalDecisions.ReportAppServer.Prompting.dll",
+        "lib/CrystalDecisions.ReportAppServer.ReportDefModel.dll",
+        "lib/CrystalDecisions.ReportAppServer.XmlSerialize.dll"
+      ]
+    },
+    "CrystalDecisions.ReportSource/1.0.0": {
+      "sha512": "YO0Ap65qeD1WO66Bcu9ZCb2cN4Zuq/sii8+0/jX6jTEzaO1tPbizDtSSJC0tp+nOnQqeGJNM+4sN5K+tTWDGJQ==",
+      "type": "package",
+      "path": "crystaldecisions.reportsource/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "crystaldecisions.reportsource.1.0.0.nupkg.sha512",
+        "crystaldecisions.reportsource.nuspec",
+        "lib/CrystalDecisions.ReportSource.dll"
+      ]
+    },
+    "CrystalDecisions.Shared/1.0.0": {
+      "sha512": "M3T2xrJ/oTrPUu3j0ODVhP981QTPdoHSly47IfrIWy7UUROpfF1p8jRTYzBoy2toQ2B5PKtnnkpAimp2mtnrdg==",
+      "type": "package",
+      "path": "crystaldecisions.shared/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "crystaldecisions.shared.1.0.0.nupkg.sha512",
+        "crystaldecisions.shared.nuspec",
+        "lib/CrystalDecisions.Shared.dll"
+      ]
+    },
+    "CrystalDecisions.Windows.Forms/1.0.0": {
+      "sha512": "Ot7NKSvtCpQYtJcIqrTADfqMQlRimmLA5tAiL/gHvyblDXl3S2xK97QphpI42lJ6BAWOvD2giV7HIJLJjnCDoA==",
+      "type": "package",
+      "path": "crystaldecisions.windows.forms/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "crystaldecisions.windows.forms.1.0.0.nupkg.sha512",
+        "crystaldecisions.windows.forms.nuspec",
+        "lib/CrystalDecisions.Windows.Forms.dll"
       ]
     },
     "Google.Protobuf/3.26.1": {
@@ -1605,11 +1803,18 @@
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
+      "CrystalDecisions.CrystalReports >= 13.0.25.3158",
+      "CrystalDecisions.CrystalReports.Engine >= 1.0.0",
+      "CrystalDecisions.ReportAppServer.Shared >= 1.0.0",
+      "CrystalDecisions.ReportSource >= 1.0.0",
+      "CrystalDecisions.Shared >= 1.0.0",
+      "CrystalDecisions.Windows.Forms >= 1.0.0",
       "MySql.Data >= 9.1.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\b15-04m\\.nuget\\packages\\": {}
+    "C:\\Users\\b15-04m\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -1620,8 +1825,12 @@
       "packagesPath": "C:\\Users\\b15-04m\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\b15-04m\\Desktop\\DI\\DI2425-LMSP\\Gestpro\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\b15-04m\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1629,6 +1838,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1646,12 +1856,37 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0-windows7.0": {
         "targetAlias": "net8.0-windows",
         "dependencies": {
+          "CrystalDecisions.CrystalReports": {
+            "target": "Package",
+            "version": "[13.0.25.3158, )"
+          },
+          "CrystalDecisions.CrystalReports.Engine": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "CrystalDecisions.ReportAppServer.Shared": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "CrystalDecisions.ReportSource": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "CrystalDecisions.Shared": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "CrystalDecisions.Windows.Forms": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "MySql.Data": {
             "target": "Package",
             "version": "[9.1.0, )"
@@ -1676,8 +1911,70 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"CrystalDecisions.CrystalReports 13.0.25.3158\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net8.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "CrystalDecisions.CrystalReports",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"CrystalDecisions.CrystalReports.Engine 1.0.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net8.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "CrystalDecisions.CrystalReports.Engine",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"CrystalDecisions.ReportAppServer.Shared 1.0.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net8.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "CrystalDecisions.ReportAppServer.Shared",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"CrystalDecisions.ReportSource 1.0.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net8.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "CrystalDecisions.ReportSource",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"CrystalDecisions.Shared 1.0.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net8.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "CrystalDecisions.Shared",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"CrystalDecisions.Windows.Forms 1.0.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net8.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "CrystalDecisions.Windows.Forms",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    }
+  ]
 }

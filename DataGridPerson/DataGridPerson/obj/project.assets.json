@@ -1609,23 +1609,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\USUARIO\\.nuget\\packages\\": {},
+    "C:\\Users\\b15-04m\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USUARIO\\Desktop\\DAM2repos\\DI\\DI2425-LMSP\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj",
+      "projectUniqueName": "C:\\Users\\b15-04m\\Desktop\\DI\\DI2425-LMSP\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj",
       "projectName": "DataGridPerson",
-      "projectPath": "C:\\Users\\USUARIO\\Desktop\\DAM2repos\\DI\\DI2425-LMSP\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj",
-      "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USUARIO\\Desktop\\DAM2repos\\DI\\DI2425-LMSP\\DataGridPerson\\DataGridPerson\\obj\\",
+      "projectPath": "C:\\Users\\b15-04m\\Desktop\\DI\\DI2425-LMSP\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj",
+      "packagesPath": "C:\\Users\\b15-04m\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\b15-04m\\Desktop\\DI\\DI2425-LMSP\\DataGridPerson\\DataGridPerson\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\b15-04m\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1634,6 +1634,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1652,7 +1653,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -1682,7 +1683,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
