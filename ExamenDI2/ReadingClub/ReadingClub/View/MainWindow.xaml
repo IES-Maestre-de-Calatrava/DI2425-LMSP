@@ -38,7 +38,7 @@
                         <TextBox x:Name="tbMail" Margin="20,2" Height="25"/>
                         <TextBlock Text="Telephone" Margin="80,0"/>
                         <TextBox x:Name="tbPhone" Margin="20,2" Height="25"/>
-                        <Button x:Name="btnAddMember" Content="Add" Margin="20,20,20,2"/>
+                        <Button x:Name="btnAddMember" Content="Add" Margin="20,20,20,2" Click="btnAddMember_Click"/>
                         <Button x:Name="btnModifyMember" Content="Modify" Margin="20,2,20,2"/>
                         <Button x:Name="btnDeleteMember" Content="Delete" Margin="20,2,20,0"/>
                     </StackPanel>
@@ -48,9 +48,9 @@
                         FontSize="12" FontFamily="Cascadia Code" >
                         <DataGrid.Columns>
                             <DataGridTextColumn Width="*" Header="Name" Binding="{Binding Name}" />
-                            <DataGridTextColumn Width="*" Header="Date of birth" Binding="{Binding SurName}" />
-                            <DataGridTextColumn Width="*" Header="Email" Binding="{Binding Rol}" />
-                            <DataGridTextColumn Width="*" Header="Phone" Binding="{Binding CSR}" />
+                            <DataGridTextColumn Width="*" Header="Date of birth" Binding="{Binding DateBirth}" />
+                            <DataGridTextColumn Width="*" Header="Email" Binding="{Binding Email}" />
+                            <DataGridTextColumn Width="*" Header="Phone" Binding="{Binding Phone}" />
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -74,13 +74,13 @@
                         <TextBox x:Name="tbAuthor" Margin="20,2" Height="25"/>
 
                         <TextBlock Text="Genre Id" Margin="80,0"/>
-                        <ComboBox x:Name="tbMai" Margin="20,2" Height="25">
+                        <ComboBox x:Name="cbGenre" Margin="20,2" Height="25">
                             <ComboBoxItem Content="Magical realism"/>
                             <ComboBoxItem Content="Science Fiction"/>
                         </ComboBox>
                         <TextBlock Text="Publication year" Margin="80,0"/>
                         <TextBox x:Name="tbPYear" Margin="20,2" Height="25"/>
-                        <Button x:Name="btnAddBook" Content="Add" Margin="20,20,20,2"/>
+                        <Button x:Name="btnAddBook" Content="Add" Margin="20,20,20,2" Click="btnAddBook_Click"/>
                         <Button x:Name="btnModifyBook" Content="Modify" Margin="20,2,20,2"/>
                         <Button x:Name="btnDeleteBook" Content="Delete" Margin="20,2,20,0"/>
                     </StackPanel>
@@ -90,7 +90,7 @@
         FontSize="12" FontFamily="Cascadia Code" SelectionChanged="dataBooks_SelectionChanged" >
                         <DataGrid.Columns>
                             <DataGridTextColumn Width="*" Header="Title" Binding="{Binding Title}" />
-                            <DataGridTextColumn Width="*" Header="Author" Binding="{Binding DateBirth}" />
+                            <DataGridTextColumn Width="*" Header="Author" Binding="{Binding Author}" />
                             <DataGridTextColumn Width="*" Header="Genre" Binding="{Binding Genre}" />
                             <DataGridTextColumn Width="*" Header="Publication year" Binding="{Binding PYear}" />
                         </DataGrid.Columns>
@@ -127,7 +127,7 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="Books list report">
+            <TabItem Header="List of books report">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -135,12 +135,21 @@
                     </Grid.RowDefinitions>
                     <Button x:Name="btnBooksReport" Content="Generate report" Click="btnBooksReport_Click"/>
 
-                    <Viewer:CrystalReportsViewer HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" />
+                    <Viewer:CrystalReportsViewer x:Name="viewer" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" />
 
                 </Grid>
             </TabItem>
             <TabItem Header="Lendings and returns report">
-                <Viewer:CrystalReportsViewer Margin="0,16,0,384"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnLendingsReport" Content="Generate report" Height="20" Grid.RowSpan="2" VerticalAlignment="Top" Click="btnLendingsReport_Click"/>
+
+                    <Viewer:CrystalReportsViewer x:Name="viewerLending" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" />
+
+                </Grid>
             </TabItem>
 
 

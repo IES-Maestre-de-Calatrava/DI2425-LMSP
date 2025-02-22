@@ -1,16 +1,28 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
-<xs:schema id="DataSetLendings" 
-                  targetNamespace="http://tempuri.org/DataSetLendings.xsd"
-                  elementFormDefault="qualified"
-                  attributeFormDefault="qualified"
-                  xmlns="http://tempuri.org/DataSetLendings.xsd"
-                  xmlns:mstns="http://tempuri.org/DataSetLendings.xsd"
-                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                  xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
-                  xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
-    <xs:element name="DataSetLendings" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true">
-        <xs:complexType>
-            <xs:choice minOccurs="0" maxOccurs="unbounded"></xs:choice>
-        </xs:complexType>
-    </xs:element>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetLendings" targetNamespace="http://tempuri.org/DataSetLendings.xsd" xmlns:mstns="http://tempuri.org/DataSetLendings.xsd" xmlns="http://tempuri.org/DataSetLendings.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetLendings" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSetLendings" msprop:Generator_DataSetName="DataSetLendings">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Lendings" msprop:Generator_RowEvHandlerName="LendingsRowChangeEventHandler" msprop:Generator_RowDeletedName="LendingsRowDeleted" msprop:Generator_RowDeletingName="LendingsRowDeleting" msprop:Generator_RowEvArgName="LendingsRowChangeEvent" msprop:Generator_TablePropName="Lendings" msprop:Generator_RowChangedName="LendingsRowChanged" msprop:Generator_RowChangingName="LendingsRowChanging" msprop:Generator_TableClassName="LendingsDataTable" msprop:Generator_RowClassName="LendingsRow" msprop:Generator_TableVarName="tableLendings" msprop:Generator_UserTableName="Lendings">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name_x0020_of_x0020_member" msprop:Generator_ColumnPropNameInRow="Name_of_member" msprop:Generator_ColumnPropNameInTable="Name_of_memberColumn" msprop:Generator_ColumnVarNameInTable="columnName_of_member" msprop:Generator_UserColumnName="Name of member" type="xs:string" minOccurs="0" />
+              <xs:element name="Title_x0020_of_x0020_book" msprop:Generator_ColumnPropNameInRow="Title_of_book" msprop:Generator_ColumnPropNameInTable="Title_of_bookColumn" msprop:Generator_ColumnVarNameInTable="columnTitle_of_book" msprop:Generator_UserColumnName="Title of book" type="xs:string" minOccurs="0" />
+              <xs:element name="Loan_x0020_date" msprop:Generator_ColumnPropNameInRow="Loan_date" msprop:Generator_ColumnPropNameInTable="Loan_dateColumn" msprop:Generator_ColumnVarNameInTable="columnLoan_date" msprop:Generator_UserColumnName="Loan date" type="xs:string" minOccurs="0" />
+              <xs:element name="Return_x0020_date" msprop:Generator_ColumnPropNameInRow="Return_date" msprop:Generator_ColumnPropNameInTable="Return_dateColumn" msprop:Generator_ColumnVarNameInTable="columnReturn_date" msprop:Generator_UserColumnName="Return date" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
