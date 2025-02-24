@@ -7,11 +7,11 @@ using System.Windows;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("ReadingClub")]
+[assembly: AssemblyTitle("pruebasAntesdeExamen")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ReadingClub")]
+[assembly: AssemblyProduct("pruebasAntesdeExamen")]
 [assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -31,13 +31,13 @@ using System.Windows;
 //[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]
 
 
-[assembly: ThemeInfo(
+[assembly:ThemeInfo(
     ResourceDictionaryLocation.None, //donde se encuentran los diccionarios de recursos específicos del tema
-                                     //(se utiliza si no se encuentra ningún recurso en la página,
-                                     // ni diccionarios de recursos de la aplicación)
+                             //(se utiliza si no se encuentra ningún recurso en la página,
+                             // ni diccionarios de recursos de la aplicación)
     ResourceDictionaryLocation.SourceAssembly //donde se encuentra el diccionario de recursos genérico
-                                              //(se utiliza si no se encuentra ningún recurso en la página,
-                                              // aplicación o diccionarios de recursos específicos del tema)
+                                      //(se utiliza si no se encuentra ningún recurso en la página,
+                                      // aplicación o diccionarios de recursos específicos del tema)
 )]
 
 
@@ -50,5 +50,3 @@ using System.Windows;
 //
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-
-
