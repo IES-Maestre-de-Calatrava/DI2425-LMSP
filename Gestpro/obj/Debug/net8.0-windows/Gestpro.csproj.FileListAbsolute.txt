@@ -52,4 +52,7 @@ C:\Users\USUARIO\Desktop\DAM2repos\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windo
 C:\Users\USUARIO\Desktop\DAM2repos\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro.dll
 C:\Users\USUARIO\Desktop\DAM2repos\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\refint\Gestpro.dll
 C:\Users\USUARIO\Desktop\DAM2repos\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro.pdb
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

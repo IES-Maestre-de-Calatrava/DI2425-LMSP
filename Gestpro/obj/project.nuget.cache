@@ -1,7 +1,11 @@
 {
   "version": 2,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   "dgSpecHash": "YPuTEualoFs=",
+=======
+  "dgSpecHash": "1kctp8MFpP0=",
+>>>>>>> Stashed changes
 =======
   "dgSpecHash": "1kctp8MFpP0=",
 >>>>>>> Stashed changes
@@ -10,12 +14,15 @@
   "expectedPackageFiles": [
     "C:\\Users\\USUARIO\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "C:\\Users\\USUARIO\\.nuget\\packages\\crystaldecisions.crystalreports\\13.0.25.3158\\crystaldecisions.crystalreports.13.0.25.3158.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\crystaldecisions.crystalreports.engine\\1.0.0\\crystaldecisions.crystalreports.engine.1.0.0.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\crystaldecisions.reportappserver.shared\\1.0.0\\crystaldecisions.reportappserver.shared.1.0.0.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\crystaldecisions.reportsource\\1.0.0\\crystaldecisions.reportsource.1.0.0.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\crystaldecisions.shared\\1.0.0\\crystaldecisions.shared.1.0.0.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\crystaldecisions.windows.forms\\1.0.0\\crystaldecisions.windows.forms.1.0.0.nupkg.sha512",
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     "C:\\Users\\USUARIO\\.nuget\\packages\\google.protobuf\\3.26.1\\google.protobuf.3.26.1.nupkg.sha512",

@@ -117,6 +117,7 @@
             <TabItem Header="G.ECONÓMICA" IsSelected="True" IsEnabled="False"/>
             <TabItem Header="ESTADISTICAS" IsSelected="True">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 <Grid x:Name="contenedorCrystal">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -130,12 +131,17 @@
                     
 
 =======
+=======
+>>>>>>> Stashed changes
                 <Grid x:Name="contenedorCR">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                 </Grid>
             </TabItem>
