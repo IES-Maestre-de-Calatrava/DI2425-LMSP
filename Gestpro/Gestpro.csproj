@@ -7,6 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ReferencePath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win64_x64\dotnet\</ReferencePath>
+<<<<<<< Updated upstream
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -15,6 +16,8 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <IsPublishable>True</IsPublishable>
+=======
+>>>>>>> Stashed changes
   </PropertyGroup>
 
   <ItemGroup>
@@ -290,6 +293,7 @@
     <Service Include="{c0c07587-41a7-46c8-8fbd-3f9c8ebe2ddc}" />
   </ItemGroup>
 
+<<<<<<< Updated upstream
   <ItemGroup>
     <Compile Update="view\CostByProjectReport.cs">
       <DesignTime>True</DesignTime>
@@ -305,4 +309,6 @@
     </None>
   </ItemGroup>
 
+=======
+>>>>>>> Stashed changes
 </Project>

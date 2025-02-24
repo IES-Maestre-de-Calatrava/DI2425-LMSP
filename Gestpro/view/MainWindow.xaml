@@ -116,6 +116,7 @@
             </TabItem>
             <TabItem Header="G.ECONÓMICA" IsSelected="True" IsEnabled="False"/>
             <TabItem Header="ESTADISTICAS" IsSelected="True">
+<<<<<<< Updated upstream
                 <Grid x:Name="contenedorCrystal">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -128,6 +129,14 @@
                     <Button x:Name="btnShowReport" Grid.Row="0" Content="Mostrar Informe" Margin="200,5,0,5" Width="150" IsEnabled="False" Click="btnShowReport_Click"/>
                     
 
+=======
+                <Grid x:Name="contenedorCR">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+>>>>>>> Stashed changes
                 </Grid>
             </TabItem>
             <TabItem Header="USUARIOS" IsSelected="True">

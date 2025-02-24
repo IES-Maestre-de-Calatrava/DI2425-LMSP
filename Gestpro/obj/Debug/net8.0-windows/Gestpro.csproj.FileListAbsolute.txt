@@ -1,4 +1,5 @@
 C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro.csproj.AssemblyReference.cache
+<<<<<<< Updated upstream
 C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Interop.CrystalReportViewerExportLib.dll
 C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Interop.CrystalActiveXReportViewerLib13.dll
 C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Interop.CrystalReportsCubeDefModelLib.dll
@@ -25,3 +26,30 @@ C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Interop
 C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Interop.CrystalReportsLocalConnectionMgrLib.dll
 C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Interop.CRQUERYENGINE.dll
 C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Interop.CrystalAnalysisCommonControlsLib.dll
+=======
+C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\view\MainWindow.g.cs
+C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro_MarkupCompile.cache
+C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro_MarkupCompile.lref
+C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\view\MainWindow.baml
+C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro.g.resources
+C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro.AssemblyInfoInputs.cache
+C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro.AssemblyInfo.cs
+C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro.csproj.CoreCompileInputs.cache
+C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro.sourcelink.json
+C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro.csproj.Up2Date
+C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro.dll
+C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\refint\Gestpro.dll
+C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro.pdb
+C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro.genruntimeconfig.cache
+C:\Users\b15-04m\Desktop\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\ref\Gestpro.dll
+C:\Users\USUARIO\Desktop\DAM2repos\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Desktop\DAM2repos\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\view\MainWindow.g.cs
+C:\Users\USUARIO\Desktop\DAM2repos\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\USUARIO\Desktop\DAM2repos\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro_MarkupCompile.cache
+C:\Users\USUARIO\Desktop\DAM2repos\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro_MarkupCompile.lref
+C:\Users\USUARIO\Desktop\DAM2repos\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro.dll
+C:\Users\USUARIO\Desktop\DAM2repos\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\refint\Gestpro.dll
+C:\Users\USUARIO\Desktop\DAM2repos\DI\DI2425-LMSP\Gestpro\obj\Debug\net8.0-windows\Gestpro.pdb
+>>>>>>> Stashed changes
